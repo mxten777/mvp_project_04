@@ -33,8 +33,8 @@ const values = [
 ];
 
 const stats = [
-  { name: '설립년도', value: '2024' },
-  { name: '전문 개발진', value: '4명' },
+  { name: '설립년도', value: '2003' },
+  { name: '전문 개발진', value: '7명' },
   { name: '주요 사업분야', value: 'AI & RPA' },
   { name: '서비스 지역', value: '전국' },
 ];

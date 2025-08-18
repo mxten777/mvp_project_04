@@ -43,9 +43,9 @@ export default function Footer() {
             </p>
             <div className="text-sm text-gray-300">
               <p className="font-semibold text-white mb-2">연락처</p>
-              <p>📞 070-1234-5678</p>
-              <p>✉️ contact@baikalsystems.co.kr</p>
-              <p>📍 서울특별시 강남구 테헤란로 123</p>
+              <p>📞 010-2380-4691</p>
+              <p>✉️ mxten777@gmail.com</p>
+              <p>📍 서울특별시 강남구 역삼로 138</p>
             </div>
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
@@ -102,8 +102,8 @@ export default function Footer() {
                 <h3 className="text-sm font-semibold leading-6 text-white">사업자 정보</h3>
                 <div className="mt-6 text-sm text-gray-300 space-y-1">
                   <p>상호: (주) 바이칼시스템즈</p>
-                  <p>대표자: [대표자명]</p>
-                  <p>사업자등록번호: [사업자번호]</p>
+                  <p>대표자: 정동열</p>
+                  <p>사업자등록번호: 215-86-47300</p>
                   <p>통신판매업신고: [신고번호]</p>
                 </div>
               </div>
@@ -124,7 +124,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-xs leading-5 text-gray-400">
-              &copy; 2024 (주) 바이칼시스템즈. All rights reserved.
+              &copy; 2003 (주) 바이칼시스템즈. All rights reserved.
             </p>
             <div className="flex items-center space-x-4">
               <span className="text-xs text-gray-400">Powered by</span>

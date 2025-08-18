@@ -140,7 +140,7 @@ export default function ContactSection() {
                 </div>
                 <div className="ml-3">
                   <p className="text-sm font-medium text-gray-900">전화번호</p>
-                  <p className="text-sm text-gray-600">070-1234-5678</p>
+                  <p className="text-sm text-gray-600">010-2380-4691</p>
                 </div>
               </div>
 
@@ -150,7 +150,7 @@ export default function ContactSection() {
                 </div>
                 <div className="ml-3">
                   <p className="text-sm font-medium text-gray-900">이메일</p>
-                  <p className="text-sm text-gray-600">contact@baikalsystems.co.kr</p>
+                  <p className="text-sm text-gray-600">mxten777@gmail.com</p>
                 </div>
               </div>
 
@@ -161,8 +161,8 @@ export default function ContactSection() {
                 <div className="ml-3">
                   <p className="text-sm font-medium text-gray-900">주소</p>
                   <p className="text-sm text-gray-600">
-                    서울특별시 강남구 테헤란로 123<br />
-                    바이칼빌딩 12층
+                    서울특별시 강남구 역삼로 138<br />
+                    동광빌딩 5층
                   </p>
                 </div>
               </div>
