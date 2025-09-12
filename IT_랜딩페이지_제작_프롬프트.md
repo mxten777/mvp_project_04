@@ -8,7 +8,7 @@
 - **Next.js 15.x (App Router)**
 - **React 19**
 - **TypeScript**
-- **Tailwind CSS v3.4**
+- **Tailwind CSS v3.3.3** (표준화 적용)
 - **Framer Motion** (애니메이션)
 - **Heroicons** (아이콘)
 - **Firebase** (필요시 백엔드)
@@ -56,7 +56,7 @@
 
 ## 8. 기타 팁
 - Framer Motion의 `ease` 값은 string이 아닌 cubic-bezier 배열로 지정
-- Tailwind CSS는 v3.4 권장 (v4는 Next.js 15과 충돌 가능)
+- Tailwind CSS는 v3.3.3 표준화 적용 (v4는 Next.js 15과 충돌 가능)
 - 배포 전 `npm run build`로 오류/경고 체크
 - Vercel 배포시 환경변수(Firebase 등) 설정 필요시 `.env` 파일 활용
 

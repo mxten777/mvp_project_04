@@ -1,6 +1,5 @@
 'use client';
 
-
 import { useState } from 'react';
 import Link from 'next/link';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -16,36 +15,43 @@ const navigation = [
 ];
 
 export default function Header() {
+  console.log('Header component rendered');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
-      <motion.header 
-  className="fixed inset-x-0 top-0 z-50 transition-all duration-300 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 h-16 shadow-md border-b border-blue-800/40"
+      {/* 디버그 배너 제거됨 */}
+      <motion.header
+        className="fixed inset-x-0 top-0 z-50 transition-all duration-300 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 h-16 shadow-md border-b border-blue-800/40"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <nav className="flex items-center justify-between p-4 lg:px-8 max-w-7xl mx-auto">
-          <motion.div 
+        <nav className="flex items-center justify-between px-3 py-2 sm:px-4 lg:px-8 max-w-7xl mx-auto min-h-16">
+          <motion.div
             className="flex items-center lg:flex-1 pl-0"
             whileHover={{ scale: 1.05 }}
           >
             <Link href="#home" className="flex items-center">
               <div className="flex items-center space-x-2">
-                <div className="flex items-center justify-center" style={{ width: '140px', height: '32px' }}>
-                  <Image
-                    src="/images/baikal_logo.png"
-                    alt="바이칼시스템즈 로고"
-                    width={140}
-                    height={32}
-                    className="object-contain"
-                    style={{ maxHeight: '48px', width: 'auto', objectFit: 'contain', display: 'block' }}
-                    priority
-                  />
+                <div className="flex items-center justify-center">
+                  {/* 동그란 로고 */}
+                  <div
+                    className="rounded-full overflow-hidden shadow-lg border-2 border-blue-400 bg-white flex items-center justify-center"
+                    style={{ width: 48, height: 48 }}
+                  >
+                    <Image
+                      src="/images/baikal_logo.png"
+                      alt="바이칼시스템즈 로고"
+                      width={44}
+                      height={44}
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
                 </div>
                 <span
-                  className="ml-3 text-xl font-extrabold tracking-tight text-white whitespace-nowrap hidden sm:inline-block drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
+                  className="ml-2 text-lg font-extrabold tracking-tight text-white whitespace-nowrap hidden md:inline-block drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
                   style={{ letterSpacing: '0.01em' }}
                 >
                   (주)바이칼시스템즈
@@ -53,7 +59,7 @@ export default function Header() {
               </div>
             </Link>
           </motion.div>
-          
+
           <div className="flex lg:hidden">
             <button
               type="button"
@@ -63,7 +69,7 @@ export default function Header() {
               <Bars3Icon className="h-6 w-6" />
             </button>
           </div>
-          
+
           <div className="hidden lg:flex lg:gap-x-8">
             {navigation.map((item, index) => (
               <motion.div
@@ -81,7 +87,7 @@ export default function Header() {
               </motion.div>
             ))}
           </div>
-          
+
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <motion.a
               href="#contact"

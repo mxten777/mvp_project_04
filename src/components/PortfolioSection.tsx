@@ -90,8 +90,8 @@ export default function PortfolioSection() {
     : portfolioItems.filter(item => item.category === selectedCategory);
 
   return (
-    <section id="portfolio" className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="portfolio" className="py-14 sm:py-20 md:py-24">
+  <div className="mx-auto max-w-7xl px-2 xs:px-3 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -99,13 +99,9 @@ export default function PortfolioSection() {
           transition={{ duration: 0.8 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="text-base font-semibold leading-7 text-blue-600">포트폴리오</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            성공적인 프로젝트 사례
-          </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            다양한 분야에서 축적한 전문성과 혁신적인 솔루션을 확인해보세요.
-          </p>
+          <h2 className="text-xs xs:text-sm sm:text-base font-semibold leading-7 text-blue-600">포트폴리오</h2>
+          <p className="mt-2 text-xl xs:text-2xl sm:text-4xl font-bold tracking-tight text-gray-900">성공적인 프로젝트 사례</p>
+          <p className="mt-4 sm:mt-6 text-sm xs:text-base leading-7 sm:leading-8 text-gray-600">다양한 분야에서 축적한 전문성과 혁신적인 솔루션을 확인해보세요.</p>
         </motion.div>
 
         {/* Category Filter */}
@@ -113,7 +109,7 @@ export default function PortfolioSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-12 flex flex-wrap justify-center gap-3"
+          className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-2 xs:gap-3"
         >
           {categories.map((category) => (
             <button
@@ -131,7 +127,7 @@ export default function PortfolioSection() {
         </motion.div>
 
         {/* Portfolio Grid */}
-        <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+  <div className="mx-auto mt-10 sm:mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-5 xs:gap-7 sm:gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {filteredItems.map((item, index) => (
             <motion.article
               key={item.id}
@@ -142,31 +138,31 @@ export default function PortfolioSection() {
             >
               {/* Image Placeholder */}
               <div className="relative h-48 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                <item.icon className="h-16 w-16 text-blue-600" />
+                <item.icon className="h-12 xs:h-14 w-12 xs:w-14 sm:h-16 sm:w-16 text-blue-600" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
 
-              <div className="flex flex-1 flex-col p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
+              <div className="flex flex-1 flex-col p-4 xs:p-5 sm:p-6">
+                <div className="flex items-center justify-between mb-2 xs:mb-3">
+                  <span className="inline-flex items-center rounded-full bg-blue-100 px-2 py-0.5 text-[11px] xs:text-xs font-medium text-blue-800">
                     {item.category}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
+                <h3 className="text-base xs:text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
                   {item.title}
                 </h3>
                 
-                <p className="mt-2 text-sm text-gray-600 line-clamp-2">
+                <p className="mt-1 xs:mt-2 text-xs xs:text-sm text-gray-600 line-clamp-2">
                   {item.description}
                 </p>
 
                 {/* Technologies */}
-                <div className="mt-4 flex flex-wrap gap-1">
+                <div className="mt-2 xs:mt-4 flex flex-wrap gap-1">
                   {item.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600"
+                      className="inline-flex items-center rounded-md bg-gray-50 px-1.5 py-0.5 xs:px-2 xs:py-1 text-[11px] xs:text-xs font-medium text-gray-600"
                     >
                       {tech}
                     </span>
@@ -174,17 +170,17 @@ export default function PortfolioSection() {
                 </div>
 
                 {/* Features */}
-                <div className="mt-4 space-y-1">
+                <div className="mt-2 xs:mt-4 space-y-1">
                   {item.features.map((feature) => (
-                    <div key={feature} className="flex items-center text-xs text-gray-600">
-                      <div className="mr-2 h-1 w-1 rounded-full bg-blue-600" />
+                    <div key={feature} className="flex items-center text-[11px] xs:text-xs text-gray-600">
+                      <div className="mr-1.5 xs:mr-2 h-1 w-1 rounded-full bg-blue-600" />
                       {feature}
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-6 flex justify-between items-center">
-                  <button className="text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors duration-200">
+                <div className="mt-4 xs:mt-6 flex justify-between items-center">
+                  <button className="text-xs xs:text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors duration-200">
                     자세히 보기 →
                   </button>
                 </div>
@@ -198,18 +194,14 @@ export default function PortfolioSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-20 text-center"
+          className="mt-12 sm:mt-16 md:mt-20 text-center"
         >
-          <h3 className="text-2xl font-bold text-gray-900">
-            다음 성공 사례의 주인공이 되어보세요
-          </h3>
-          <p className="mt-4 text-lg text-gray-600">
-            전문 컨설턴트와 함께 맞춤형 솔루션을 설계해보세요.
-          </p>
-          <div className="mt-8">
+          <h3 className="text-lg xs:text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">다음 성공 사례의 주인공이 되어보세요</h3>
+          <p className="mt-2 sm:mt-4 text-sm sm:text-lg text-gray-600 dark:text-gray-300">전문 컨설턴트와 함께 맞춤형 솔루션을 설계해보세요.</p>
+          <div className="mt-5 sm:mt-8">
             <a
               href="#contact"
-              className="inline-flex items-center rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:bg-blue-500 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-all duration-200"
+              className="inline-flex items-center rounded-cta bg-cta-gradient dark:bg-gradient-to-r dark:from-cta dark:to-secondary-dark px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold text-white shadow-cta hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all duration-200"
             >
               프로젝트 상담 받기
               <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
