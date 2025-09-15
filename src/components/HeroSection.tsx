@@ -23,10 +23,10 @@ export default function HeroSection() {
 
 
           {/* 메인 헤딩 */}
-          <h1 className="text-2xl xs:text-3xl sm:text-5xl md:text-7xl font-bold text-white dark:text-foreground mb-3 xs:mb-4 sm:mb-6 leading-tight break-keep">
+          <h1 className="text-2xl xs:text-3xl sm:text-5xl md:text-7xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] dark:text-white mb-3 xs:mb-4 sm:mb-6 leading-snug break-keep">
             미래를 코딩하는
             <br />
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent dark:from-primary-light dark:to-secondary-light">
+            <span>
               바이칼시스템즈
             </span>
           </h1>
