@@ -1,0 +1,94 @@
+{
+  "common": {
+    "home": "ホーム",
+    "about": "会社概要",
+    "services": "サービス",
+    "portfolio": "ポートフォリオ",
+    "contact": "お問い合わせ",
+    "language": "言語",
+    "theme": "テーマ",
+    "search": "検索",
+    "menu": "メニュー",
+    "close": "閉じる",
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "success": "成功"
+  },
+  "hero": {
+    "title": "革新的なITソリューションで",
+    "subtitle": "ビジネスの未来を設計します",
+    "description": "最先端技術と専門性により、クラウド、AI、ブロックチェーン分野の最高レベルソリューションを提供します。",
+    "cta": {
+      "primary": "プロジェクトを開始",
+      "secondary": "サービスを見る"
+    }
+  },
+  "services": {
+    "title": "専門サービス",
+    "subtitle": "カスタマイズされたITソリューション",
+    "cloud": {
+      "title": "クラウドインフラ",
+      "description": "スケーラブルで安全なクラウド環境構築"
+    },
+    "ai": {
+      "title": "AI開発",
+      "description": "機械学習とAI技術を活用した革新的ソリューション"
+    },
+    "blockchain": {
+      "title": "ブロックチェーン",
+      "description": "分散台帳技術によるセキュリティ強化"
+    },
+    "consulting": {
+      "title": "ITコンサルティング",
+      "description": "戦略的技術アドバイスとデジタル変革ガイド"
+    }
+  },
+  "about": {
+    "title": "会社概要",
+    "subtitle": "技術で繋ぐ未来",
+    "description": "2020年に設立されたBaikal Systemsは、最新のIT技術を通じてお客様のビジネス革新を牽引する専門企業です。",
+    "mission": "革新的な技術でより良い世界を創造すること",
+    "vision": "技術革新のリーディングカンパニー",
+    "values": {
+      "innovation": "革新",
+      "excellence": "卓越性", 
+      "collaboration": "協働",
+      "integrity": "誠実性"
+    }
+  },
+  "portfolio": {
+    "title": "ポートフォリオ",
+    "subtitle": "成功プロジェクト事例",
+    "viewProject": "プロジェクトを見る",
+    "technologies": "使用技術",
+    "client": "クライアント",
+    "duration": "期間",
+    "categories": {
+      "all": "すべて",
+      "web": "ウェブ開発",
+      "mobile": "モバイルアプリ",
+      "ai": "AI・機械学習",
+      "blockchain": "ブロックチェーン"
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "一緒にプロジェクトを始めましょう",
+    "form": {
+      "name": "お名前",
+      "email": "メールアドレス",
+      "company": "会社名",
+      "message": "メッセージ",
+      "submit": "送信",
+      "sending": "送信中...",
+      "success": "メッセージが正常に送信されました",
+      "error": "エラーが発生しました。もう一度お試しください"
+    },
+    "info": {
+      "address": "住所",
+      "phone": "電話番号",
+      "email": "メールアドレス",
+      "hours": "営業時間"
+    }
+  }
+}

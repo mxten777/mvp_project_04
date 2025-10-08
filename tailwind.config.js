@@ -9,10 +9,23 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Pretendard', 'Noto Sans KR', 'Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', 'monospace'],
-        display: ['Pretendard', 'Noto Sans KR', 'Inter', 'system-ui', 'sans-serif'],
-        heading: ['Pretendard', 'Noto Sans KR', 'Inter', 'system-ui', 'sans-serif'],
+        // 기본 본문 텍스트 - 가독성 최우선
+        sans: ['Pretendard Variable', 'Pretendard', 'Inter', 'Noto Sans KR', 'system-ui', 'sans-serif'],
+        
+        // 헤드라인 & 브랜딩 - 임팩트 & 전문성
+        display: ['Cal Sans', 'Space Grotesk', 'Inter', 'Pretendard Variable', 'sans-serif'],
+        
+        // 제목 & 강조 텍스트 - 모던 & 세련됨
+        heading: ['Geist', 'Space Grotesk', 'Inter', 'Pretendard Variable', 'sans-serif'],
+        
+        // 코딩 & 기술 텍스트 - 개발자 친화적
+        mono: ['Geist Mono', 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', 'monospace'],
+        
+        // UI 라벨 & 버튼 - 깔끔한 인터페이스
+        ui: ['Inter', 'Geist', 'system-ui', 'sans-serif'],
+        
+        // 브랜드 로고 & 특별 텍스트 - 독특함
+        brand: ['Cal Sans', 'Space Grotesk', 'Inter', 'sans-serif'],
       },
       colors: {
         background: 'var(--background)',
@@ -59,8 +72,10 @@ module.exports = {
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.6s ease-out',
-        'bounce-slow': 'bounce 2s infinite',
+        'bounce-slow': 'bounceSlow 2s infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
+        'pulse-slow': 'pulseSlow 3s ease-in-out infinite',
+        'float': 'float 3s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -71,9 +86,22 @@ module.exports = {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+        bounceSlow: {
+          '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+          '40%': { transform: 'translateY(-10px)' },
+          '60%': { transform: 'translateY(-5px)' },
+        },
         glow: {
           '0%': { boxShadow: '0 0 5px rgba(37, 99, 235, 0.5)' },
           '100%': { boxShadow: '0 0 20px rgba(37, 99, 235, 0.8)' },
+        },
+        pulseSlow: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.7' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
         },
       },
       typography: {
@@ -83,6 +111,52 @@ module.exports = {
             letterSpacing: '-0.01em',
           },
         },
+      },
+      fontSize: {
+        // 확장된 타이포그래피 스케일 (Tailwind 3.4.0)
+        'xs': ['0.75rem', { lineHeight: '1rem', letterSpacing: '0.025em' }],
+        'sm': ['0.875rem', { lineHeight: '1.25rem', letterSpacing: '0.01em' }],
+        'base': ['1rem', { lineHeight: '1.5rem', letterSpacing: '0' }],
+        'lg': ['1.125rem', { lineHeight: '1.75rem', letterSpacing: '-0.01em' }],
+        'xl': ['1.25rem', { lineHeight: '1.75rem', letterSpacing: '-0.01em' }],
+        '2xl': ['1.5rem', { lineHeight: '2rem', letterSpacing: '-0.02em' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem', letterSpacing: '-0.02em' }],
+        '4xl': ['2.25rem', { lineHeight: '2.5rem', letterSpacing: '-0.03em' }],
+        '5xl': ['3rem', { lineHeight: '1', letterSpacing: '-0.03em' }],
+        '6xl': ['3.75rem', { lineHeight: '1', letterSpacing: '-0.04em' }],
+        '7xl': ['4.5rem', { lineHeight: '1', letterSpacing: '-0.04em' }],
+        '8xl': ['6rem', { lineHeight: '1', letterSpacing: '-0.05em' }],
+        '9xl': ['8rem', { lineHeight: '1', letterSpacing: '-0.05em' }],
+        
+        // 전문적인 디스플레이 사이즈
+        'display-xs': ['3rem', { lineHeight: '3rem', letterSpacing: '-0.02em' }],
+        'display-sm': ['3.6rem', { lineHeight: '3.6rem', letterSpacing: '-0.025em' }],
+        'display-md': ['4.5rem', { lineHeight: '4.5rem', letterSpacing: '-0.03em' }],
+        'display-lg': ['6rem', { lineHeight: '6rem', letterSpacing: '-0.035em' }],
+        'display-xl': ['7.2rem', { lineHeight: '7.2rem', letterSpacing: '-0.04em' }],
+        'display-2xl': ['9rem', { lineHeight: '9rem', letterSpacing: '-0.045em' }],
+      },
+      fontWeight: {
+        // 확장된 폰트 굵기
+        thin: '100',
+        extralight: '200',
+        light: '300',
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
+        extrabold: '800',
+        black: '900',
+      },
+      letterSpacing: {
+        // 정밀한 자간 조정
+        tightest: '-0.075em',
+        tighter: '-0.05em',
+        tight: '-0.025em',
+        normal: '0em',
+        wide: '0.025em',
+        wider: '0.05em',
+        widest: '0.1em',
       },
     },
   },

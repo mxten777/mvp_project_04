@@ -5,18 +5,21 @@ import Link from 'next/link';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-
-const navigation = [
-  { name: '홈', href: '#home' },
-  { name: '서비스', href: '#services' },
-  { name: '솔루션', href: '#about' },
-  { name: '포트폴리오', href: '#portfolio' },
-  { name: '문의하기', href: '#contact' },
-];
+import AuthButton from '@/components/AuthButton';
+import { LanguageSelector, useLanguage } from '@/lib/i18n';
 
 export default function Header() {
   console.log('Header component rendered');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const navigation = [
+    { name: t('common.home'), href: '#home' },
+    { name: t('common.services'), href: '#services' },
+    { name: t('common.about'), href: '#about' },
+    { name: t('common.portfolio'), href: '#portfolio' },
+    { name: t('common.contact'), href: '#contact' },
+  ];
 
   return (
     <>
@@ -60,7 +63,7 @@ export default function Header() {
             </Link>
           </motion.div>
 
-          <div className="flex lg:hidden">
+          <div className="flex md:hidden">
             <button
               type="button"
               className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-colors text-white"
@@ -68,6 +71,11 @@ export default function Header() {
             >
               <Bars3Icon className="h-6 w-6" />
             </button>
+          </div>
+
+          {/* 태블릿 전용 다국어 버튼 */}
+          <div className="flex md:hidden items-center gap-2">
+            <LanguageSelector />
           </div>
 
           <div className="hidden lg:flex lg:gap-x-8">
@@ -88,7 +96,13 @@ export default function Header() {
             ))}
           </div>
 
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <div className="hidden md:flex md:flex-1 md:justify-end md:items-center md:gap-2 lg:gap-4">
+            <div className="hidden md:block">
+              <LanguageSelector />
+            </div>
+            <div className="hidden lg:block">
+              <AuthButton />
+            </div>
             <motion.a
               href="#contact"
               className="rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-2 text-sm font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300"
@@ -136,13 +150,23 @@ export default function Header() {
                       </Link>
                     ))}
                   </div>
-                  <div className="py-6">
+                  <div className="py-6 space-y-4">
+                    {/* 모바일용 다국어 선택기 */}
+                    <div className="px-3">
+                      <LanguageSelector />
+                    </div>
+                    
+                    {/* 모바일용 인증 버튼 */}
+                    <div className="px-3">
+                      <AuthButton />
+                    </div>
+                    
                     <a
                       href="#contact"
-                      className="rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-center text-sm font-semibold text-white block"
+                      className="rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-center text-sm font-semibold text-white block mx-3"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      무료 상담 신청
+                      {t('hero.cta.primary')}
                     </a>
                   </div>
                 </div>

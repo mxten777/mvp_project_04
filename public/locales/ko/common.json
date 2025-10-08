@@ -1,0 +1,103 @@
+{
+  "common": {
+    "home": "홈",
+    "about": "회사소개",
+    "services": "서비스",
+    "portfolio": "포트폴리오",
+    "contact": "연락처",
+    "language": "언어",
+    "theme": "테마",
+    "search": "검색",
+    "menu": "메뉴",
+    "close": "닫기",
+    "loading": "로딩중...",
+    "error": "오류",
+    "success": "성공"
+  },
+  "hero": {
+    "title": "혁신적인 IT 솔루션으로",
+    "subtitle": "비즈니스의 미래를 설계합니다",
+    "description": "최첨단 기술과 전문성으로 클라우드, AI, 블록체인 분야의 최고 수준 솔루션을 제공합니다.",
+    "cta": {
+      "primary": "프로젝트 시작하기",
+      "secondary": "서비스 둘러보기"
+    }
+  },
+  "services": {
+    "title": "전문 서비스",
+    "subtitle": "맞춤형 IT 솔루션",
+    "cloud": {
+      "title": "클라우드 인프라",
+      "description": "확장 가능하고 안전한 클라우드 환경 구축"
+    },
+    "ai": {
+      "title": "AI 개발",
+      "description": "머신러닝과 AI 기술을 활용한 혁신적 솔루션"
+    },
+    "blockchain": {
+      "title": "블록체인",
+      "description": "분산 원장 기술을 통한 보안 강화"
+    },
+    "consulting": {
+      "title": "IT 컨설팅",
+      "description": "전략적 기술 자문 및 디지털 전환 가이드"
+    }
+  },
+  "about": {
+    "title": "회사 소개",
+    "subtitle": "기술로 연결하는 미래",
+    "description": "2020년 설립된 Baikal Systems는 최신 IT 기술을 통해 고객의 비즈니스 혁신을 이끌어가는 전문 기업입니다.",
+    "mission": "혁신적인 기술로 더 나은 세상을 만드는 것",
+    "vision": "글로벌 IT 솔루션 리더가 되는 것",
+    "values": {
+      "innovation": "혁신",
+      "excellence": "우수성", 
+      "collaboration": "협력",
+      "integrity": "정직성"
+    }
+  },
+  "portfolio": {
+    "title": "포트폴리오",
+    "subtitle": "성공적인 프로젝트 사례",
+    "categories": {
+      "all": "전체",
+      "cloud": "클라우드",
+      "ai": "인공지능",
+      "blockchain": "블록체인",
+      "web": "웹 개발"
+    },
+    "viewProject": "프로젝트 보기",
+    "liveDemo": "라이브 데모",
+    "sourceCode": "소스코드"
+  },
+  "contact": {
+    "title": "연락하기",
+    "subtitle": "프로젝트를 함께 시작해보세요",
+    "form": {
+      "name": "이름",
+      "email": "이메일",
+      "company": "회사명",
+      "message": "메시지",
+      "send": "메시지 보내기",
+      "sending": "전송 중...",
+      "success": "메시지가 성공적으로 전송되었습니다!",
+      "error": "메시지 전송에 실패했습니다. 다시 시도해주세요."
+    },
+    "info": {
+      "address": "서울특별시 강남구 테헤란로 123",
+      "phone": "+82-2-1234-5678",
+      "email": "contact@baikal-systems.com",
+      "hours": "평일 09:00 - 18:00"
+    }
+  },
+  "footer": {
+    "description": "혁신적인 IT 솔루션으로 비즈니스의 디지털 전환을 이끄는 전문 기업입니다.",
+    "quickLinks": "빠른 링크",
+    "services": "서비스",
+    "contact": "연락처",
+    "followUs": "소셜 미디어",
+    "privacy": "개인정보처리방침",
+    "terms": "이용약관",
+    "copyright": "© 2024 Baikal Systems. All rights reserved."
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "language": "Language",
+    "theme": "Theme",
+    "search": "Search",
+    "menu": "Menu",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "hero": {
+    "title": "Innovative IT Solutions",
+    "subtitle": "Designing the Future of Business",
+    "description": "We provide top-tier solutions in cloud, AI, and blockchain technologies with cutting-edge technology and expertise.",
+    "cta": {
+      "primary": "Start Your Project",
+      "secondary": "Explore Services"
+    }
+  },
+  "services": {
+    "title": "Professional Services",
+    "subtitle": "Customized IT Solutions",
+    "cloud": {
+      "title": "Cloud Infrastructure",
+      "description": "Building scalable and secure cloud environments"
+    },
+    "ai": {
+      "title": "AI Development",
+      "description": "Innovative solutions using machine learning and AI technology"
+    },
+    "blockchain": {
+      "title": "Blockchain",
+      "description": "Enhanced security through distributed ledger technology"
+    },
+    "consulting": {
+      "title": "IT Consulting",
+      "description": "Strategic technology advisory and digital transformation guide"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Connecting the Future with Technology",
+    "description": "Founded in 2020, Baikal Systems is a professional company that leads business innovation through the latest IT technologies.",
+    "mission": "Creating a better world through innovative technology",
+    "vision": "Becoming a global IT solution leader",
+    "values": {
+      "innovation": "Innovation",
+      "excellence": "Excellence",
+      "collaboration": "Collaboration",
+      "integrity": "Integrity"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Successful Project Cases",
+    "categories": {
+      "all": "All",
+      "cloud": "Cloud",
+      "ai": "AI",
+      "blockchain": "Blockchain", 
+      "web": "Web Development"
+    },
+    "viewProject": "View Project",
+    "liveDemo": "Live Demo",
+    "sourceCode": "Source Code"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Let's start your project together",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    },
+    "info": {
+      "address": "123 Teheran-ro, Gangnam-gu, Seoul, Korea",
+      "phone": "+82-2-1234-5678",
+      "email": "contact@baikal-systems.com",
+      "hours": "Weekdays 09:00 - 18:00"
+    }
+  },
+  "footer": {
+    "description": "A professional company leading digital transformation of businesses with innovative IT solutions.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2024 Baikal Systems. All rights reserved."
+  }
+}
