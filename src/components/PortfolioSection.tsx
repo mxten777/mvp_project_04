@@ -15,7 +15,19 @@ import {
   CpuChipIcon
 } from '@heroicons/react/24/outline';
 
-const portfolioItems = [
+interface PortfolioItem {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  features: string[];
+  demoUrl?: string;
+}
+
+const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
     title: 'AI 기반 진단 솔루션',
@@ -76,9 +88,20 @@ const portfolioItems = [
     icon: ShieldCheckIcon,
     features: ['실시간 모니터링', '자동 대응', '위협 분석'],
   },
+  {
+    id: 7,
+    title: 'MXTEN[15] 바이브 코딩 MVP',
+    category: '웹앱',
+    description: '혁신적인 바이브 코딩 기반 MVP 소개 웹앱',
+    image: '/api/placeholder/400/300',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    icon: ComputerDesktopIcon,
+    features: ['반응형 디자인', '다국어 지원', '프리미엄 UI/UX'],
+    demoUrl: 'https://mxten-project-15-48zl7ce5t-dongyeol-jungs-projects.vercel.app/',
+  },
 ];
 
-const categories = ['전체', '헬스케어', 'RPA', '공공데이터', '모바일', '데이터 분석', '보안'];
+const categories = ['전체', '헬스케어', 'RPA', '공공데이터', '모바일', '데이터 분석', '보안', '웹앱'];
 
 export default function PortfolioSection() {
   const { t } = useLanguage();
@@ -253,23 +276,46 @@ export default function PortfolioSection() {
 
                   {/* Premium Action Button */}
                   <div className="flex justify-between items-center">
-                    <motion.button 
-                      className="group/btn inline-flex items-center font-ui font-semibold text-sm sm:text-base text-indigo-600 dark:text-indigo-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-300"
-                      whileHover={{ x: 4 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      자세히 보기
-                      <motion.svg 
-                        className="ml-2 w-4 h-4" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                        whileHover={{ x: 3 }}
-                        transition={{ type: "spring", stiffness: 300 }}
+                    {item.demoUrl ? (
+                      <motion.a
+                        href={item.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/btn inline-flex items-center font-ui font-semibold text-sm sm:text-base bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                        whileHover={{ x: 4, scale: 1.05 }}
+                        whileTap={{ scale: 0.98 }}
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </motion.svg>
-                    </motion.button>
+{t('portfolio.liveDemo')}
+                        <motion.svg 
+                          className="ml-2 w-4 h-4" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                          whileHover={{ x: 3 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </motion.svg>
+                      </motion.a>
+                    ) : (
+                      <motion.button 
+                        className="group/btn inline-flex items-center font-ui font-semibold text-sm sm:text-base text-indigo-600 dark:text-indigo-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-300"
+                        whileHover={{ x: 4 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+{t('portfolio.viewProject')}
+                        <motion.svg 
+                          className="ml-2 w-4 h-4" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                          whileHover={{ x: 3 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </motion.svg>
+                      </motion.button>
+                    )}
                   </div>
                 </div>
                 
