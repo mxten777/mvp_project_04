@@ -94,7 +94,7 @@ export default function HeroSection() {
               <ArrowRightIcon className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
             <motion.a 
-              href="https://mxten-project-15-lfaijxg1w-dongyeol-jungs-projects.vercel.app"
+              href="https://baikalsys.kr"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center px-7 xs:px-8 py-4 xs:py-5 bg-white/10 dark:bg-white/5 backdrop-blur-lg text-white font-ui font-semibold rounded-cta border border-white/30 hover:bg-white/20 dark:hover:bg-white/10 hover:border-white/50 transition-all duration-300 min-w-[160px] xs:min-w-[180px] text-base xs:text-lg lg:text-xl transform hover:scale-105 active:scale-95 tracking-tight"
