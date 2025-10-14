@@ -97,7 +97,7 @@ const portfolioItems: PortfolioItem[] = [
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     icon: ComputerDesktopIcon,
     features: ['반응형 디자인', '다국어 지원', '프리미엄 UI/UX'],
-    demoUrl: 'https://baikalsys.kr?refresh=20251014',
+    demoUrl: 'https://mxten-project-15-lfaijxg1w-dongyeol-jungs-projects.vercel.app',
   },
 ];
 
