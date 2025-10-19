@@ -302,12 +302,17 @@ export function useLanguage() {
 export function LanguageSelector() {
   const { currentLanguage, setLanguage, isLoading } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+  const [showFlag, setShowFlag] = useState(false);
 
   const languages = [
     { code: 'ko' as const, name: '한국어', flag: '🇰🇷' },
     { code: 'en' as const, name: 'English', flag: '🇺🇸' },
     { code: 'ja' as const, name: '日本語', flag: '🇯🇵' }
   ];
+
+  useEffect(() => {
+    setShowFlag(true);
+  }, []);
 
   return (
     <div className="relative">

@@ -48,7 +48,7 @@ export default function HeroSection() {
 
 
           {/* 메인 헤딩 - 최고급 타이포그래피 */}
-          <h1 className="font-brand text-2xl xs:text-3xl sm:text-display-xs md:text-display-md lg:text-display-lg font-bold text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] dark:text-white mb-3 xs:mb-4 sm:mb-6 leading-none tracking-tighter break-keep animate-fade-in">
+            <h1 className="font-brand text-2xl xs:text-3xl sm:text-display-xs md:text-display-md lg:text-display-lg font-bold text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] dark:text-white mb-3 xs:mb-4 sm:mb-6 leading-loose tracking-tighter break-keep animate-fade-in">
             <span className="block font-light text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-wider text-blue-100 mb-2 font-ui">
               NEXT GENERATION
             </span>
@@ -60,8 +60,8 @@ export default function HeroSection() {
           </h1>
 
           {/* 서브 헤딩 - 전문적 타이포그래피 */}
-          <p className="font-heading text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-100 dark:text-slate-200 mb-4 xs:mb-6 sm:mb-8 max-w-xs xs:max-w-xl sm:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed tracking-wide break-keep animate-slide-up font-medium">
-            {t('hero.subtitle')}
+          <p className="font-heading text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-100 dark:text-slate-200 mb-4 xs:mb-6 sm:mb-8 max-w-xs xs:max-w-xl sm:max-w-4xl lg:max-w-5xl mx-auto leading-loose tracking-wide break-keep animate-slide-up font-medium">
+              {t('hero.subtitle')}
             <br className="hidden md:block" />
             {t('hero.description')}
           </p>
