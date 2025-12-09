@@ -48,26 +48,26 @@ export default function HeroSection() {
 
 
           {/* 메인 헤딩 - 최고급 타이포그래피 */}
-            <h1 className="font-brand text-2xl xs:text-3xl sm:text-display-xs md:text-display-md lg:text-display-lg font-bold text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] dark:text-white mb-3 xs:mb-4 sm:mb-6 leading-loose tracking-tighter break-keep animate-fade-in">
-            <span className="block font-light text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-wider text-blue-100 mb-2 font-ui">
+            <h1 className="font-brand text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] dark:text-white mb-3 xs:mb-4 sm:mb-6 leading-tight tracking-tight break-keep animate-fade-in">
+            <span className="block font-light text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-wide text-blue-100 mb-2 font-ui">
               NEXT GENERATION
             </span>
             {t('hero.title')}
             <br />
-            <span className="bg-gradient-to-r from-cyan-200 via-purple-200 to-pink-200 bg-clip-text text-transparent animate-glow font-black tracking-tightest">
+            <span className="bg-gradient-to-r from-cyan-200 via-purple-200 to-pink-200 bg-clip-text text-transparent animate-glow font-black tracking-tight">
               바이칼시스템즈
             </span>
           </h1>
 
           {/* 서브 헤딩 - 전문적 타이포그래피 */}
-          <p className="font-heading text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-100 dark:text-slate-200 mb-4 xs:mb-6 sm:mb-8 max-w-xs xs:max-w-xl sm:max-w-4xl lg:max-w-5xl mx-auto leading-loose tracking-wide break-keep animate-slide-up font-medium">
+          <p className="font-heading text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-slate-100 dark:text-slate-200 mb-4 xs:mb-6 sm:mb-8 max-w-xs xs:max-w-xl sm:max-w-3xl lg:max-w-4xl mx-auto leading-relaxed tracking-normal break-keep animate-slide-up font-medium">
               {t('hero.subtitle')}
             <br className="hidden md:block" />
             {t('hero.description')}
           </p>
 
           {/* 핵심 포인트 */}
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-2 xs:gap-3 sm:gap-6 mb-6 xs:mb-8 sm:mb-12 text-gray-200 dark:text-gray-300 items-center animate-fade-in">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-2 xs:gap-3 sm:gap-6 mb-6 xs:mb-8 sm:mb-12 text-sm text-gray-200 dark:text-gray-300 items-center animate-fade-in">
             <div className="flex items-center space-x-2 hover:scale-105 transition-transform duration-200">
               <div className="w-2 h-2 bg-emerald-400 dark:bg-emerald-500 rounded-full animate-pulse"></div>
               <span className="font-medium">업무 자동화 90% 향상</span>
@@ -86,7 +86,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 justify-center items-center w-full">
             <motion.a 
               href="#contact"
-              className="group inline-flex items-center px-7 xs:px-8 py-4 xs:py-5 bg-gradient-to-r from-emerald-500 to-blue-600 text-white font-ui font-bold rounded-cta shadow-glow hover:shadow-xl hover:from-emerald-600 hover:to-blue-700 transition-all duration-300 min-w-[160px] xs:min-w-[180px] text-base xs:text-lg lg:text-xl transform hover:scale-105 active:scale-95 tracking-tight"
+              className="group inline-flex items-center px-6 xs:px-7 py-3 xs:py-4 bg-gradient-to-r from-emerald-500 to-blue-600 text-white font-ui font-bold rounded-cta shadow-glow hover:shadow-xl hover:from-emerald-600 hover:to-blue-700 transition-all duration-300 min-w-[160px] xs:min-w-[180px] text-sm xs:text-base lg:text-lg transform hover:scale-105 active:scale-95 tracking-tight"
               whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(16, 185, 129, 0.6)" }}
               whileTap={{ scale: 0.95 }}
             >
@@ -97,7 +97,7 @@ export default function HeroSection() {
               href="https://baikalsys.kr"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center px-7 xs:px-8 py-4 xs:py-5 bg-white/10 dark:bg-white/5 backdrop-blur-lg text-white font-ui font-semibold rounded-cta border border-white/30 hover:bg-white/20 dark:hover:bg-white/10 hover:border-white/50 transition-all duration-300 min-w-[160px] xs:min-w-[180px] text-base xs:text-lg lg:text-xl transform hover:scale-105 active:scale-95 tracking-tight"
+              className="group inline-flex items-center px-6 xs:px-7 py-3 xs:py-4 bg-white/10 dark:bg-white/5 backdrop-blur-lg text-white font-ui font-semibold rounded-cta border border-white/30 hover:bg-white/20 dark:hover:bg-white/10 hover:border-white/50 transition-all duration-300 min-w-[160px] xs:min-w-[180px] text-sm xs:text-base lg:text-lg transform hover:scale-105 active:scale-95 tracking-tight"
               whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
               whileTap={{ scale: 0.95 }}
             >

@@ -156,12 +156,12 @@ export default function ServicesSection() {
                 EXPERTISE
               </span>
             </div>
-            <h2 className="font-heading text-display-sm xs:text-display-md sm:text-display-lg md:text-display-xl lg:text-display-2xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 tracking-tight">
+            <h2 className="font-heading text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 tracking-tight">
               <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400">
                 {t('services.title')}
               </span>
             </h2>
-            <p className="font-ui text-lg xs:text-xl sm:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl sm:max-w-4xl mx-auto leading-relaxed break-keep tracking-tight">
+            <p className="font-ui text-base xs:text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl sm:max-w-4xl mx-auto leading-relaxed break-keep tracking-normal">
               {t('services.subtitle')}
               <br className="hidden md:block" />
               <span className="font-semibold text-gray-900 dark:text-white">바이칼시스템즈</span>의 핵심 서비스를 만나보세요
@@ -204,10 +204,10 @@ export default function ServicesSection() {
                 </div>
                 {/* Premium Content */}
                 <div className="relative">
-                  <h3 className="font-heading text-lg xs:text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:bg-gradient-to-r group-hover:from-gray-900 group-hover:to-gray-600 group-hover:bg-clip-text group-hover:text-transparent dark:group-hover:from-white dark:group-hover:to-gray-300 transition-all duration-500 tracking-tight">
+                  <h3 className="font-heading text-base xs:text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:bg-gradient-to-r group-hover:from-gray-900 group-hover:to-gray-600 group-hover:bg-clip-text group-hover:text-transparent dark:group-hover:from-white dark:group-hover:to-gray-300 transition-all duration-500 tracking-tight">
                     {service.name}
                   </h3>
-                  <p className="font-ui text-sm xs:text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed break-keep tracking-wide">
+                  <p className="font-ui text-xs xs:text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed break-keep tracking-normal">
                     {service.description}
                   </p>
                   {/* Premium Features List */}
@@ -215,13 +215,13 @@ export default function ServicesSection() {
                     {service.features.map((feature, featureIndex) => (
                       <motion.li 
                         key={featureIndex} 
-                        className="flex items-center font-ui text-sm xs:text-base text-gray-600 dark:text-gray-300 group/item hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
+                        className="flex items-center font-ui text-xs xs:text-sm text-gray-600 dark:text-gray-300 group/item hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: featureIndex * 0.1 }}
                       >
                         <div className={`w-2 h-2 xs:w-2.5 xs:h-2.5 bg-gradient-to-r ${service.color} rounded-full mr-3 sm:mr-4 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300`}></div>
-                        <span className="tracking-wide">{feature}</span>
+                        <span className="tracking-normal">{feature}</span>
                       </motion.li>
                     ))}
                   </ul>
@@ -266,15 +266,15 @@ export default function ServicesSection() {
                     READY TO START
                   </span>
                 </div>
-                <h3 className="font-heading text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
+                <h3 className="font-heading text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
                   프로젝트를 시작할 준비가 되셨나요?
                 </h3>
-                <p className="font-ui text-lg sm:text-xl text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto tracking-wide">
+                <p className="font-ui text-sm sm:text-base text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto tracking-normal">
                   전문 컨설턴트와 함께 최적의 솔루션을 찾아보세요
                 </p>
                 <motion.a
                   href="#contact"
-                  className="inline-flex items-center px-8 py-4 sm:px-10 sm:py-5 bg-white text-gray-900 font-ui font-bold rounded-2xl hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl text-lg sm:text-xl tracking-tight transform hover:scale-105 active:scale-95"
+                  className="inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 bg-white text-gray-900 font-ui font-bold rounded-2xl hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl text-base sm:text-lg tracking-tight transform hover:scale-105 active:scale-95"
                   whileHover={{ scale: 1.05, boxShadow: "0 25px 50px rgba(0,0,0,0.2)" }}
                   whileTap={{ scale: 0.95 }}
                 >

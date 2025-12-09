@@ -3,11 +3,11 @@ import { NextRequest, NextResponse } from 'next/server';
 // Content Security Policy 설정
 const CSP_HEADER = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://apis.google.com https://www.google-analytics.com;
-  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://apis.google.com https://www.google-analytics.com https://cdn.jsdelivr.net;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
   img-src 'self' data: https: blob:;
-  font-src 'self' https://fonts.gstatic.com;
-  connect-src 'self' https://api.github.com https://www.google-analytics.com;
+  font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:;
+  connect-src 'self' https://api.github.com https://www.google-analytics.com https://cdn.jsdelivr.net;
   media-src 'self' https:;
   object-src 'none';
   child-src 'self';
@@ -82,10 +82,18 @@ export function middleware(request: NextRequest) {
     );
   }
 
-  // Cross-Origin 정책
-  response.headers.set('Cross-Origin-Embedder-Policy', 'require-corp');
-  response.headers.set('Cross-Origin-Opener-Policy', 'same-origin');
-  response.headers.set('Cross-Origin-Resource-Policy', 'same-origin');
+  // Cross-Origin 정책 (개발 환경에서 완화)
+  if (process.env.NODE_ENV === 'production') {
+    response.headers.set('Cross-Origin-Embedder-Policy', 'require-corp');
+    response.headers.set('Cross-Origin-Opener-Policy', 'same-origin');
+    response.headers.set('Cross-Origin-Resource-Policy', 'same-site');
+  } else {
+    // 개발 환경: CORS 허용
+    response.headers.set('Access-Control-Allow-Origin', '*');
+    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    response.headers.set('Cross-Origin-Resource-Policy', 'cross-origin');
+  }
 
   // API 보안을 위한 추가 헤더
   if (request.nextUrl.pathname.startsWith('/api/')) {

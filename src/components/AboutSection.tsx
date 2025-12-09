@@ -106,13 +106,13 @@ export default function AboutSection() {
               </span>
             </div>
             
-            <h2 className="font-heading text-display-lg xs:text-display-xl sm:text-display-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 sm:mb-8">
+            <h2 className="font-heading text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 sm:mb-8">
               <span className="bg-gradient-to-r from-gray-900 via-indigo-900 to-purple-900 dark:from-white dark:via-indigo-200 dark:to-purple-200 bg-clip-text text-transparent">
                 {t('about.title')}
               </span>
             </h2>
             
-            <p className="font-ui text-xl xs:text-2xl sm:text-3xl text-gray-600 dark:text-gray-300 leading-relaxed tracking-wide max-w-3xl mx-auto">
+            <p className="font-ui text-base xs:text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed tracking-normal max-w-3xl mx-auto">
               {t('about.subtitle')}
             </p>
           </motion.div>
@@ -138,15 +138,15 @@ export default function AboutSection() {
                         VISION
                       </span>
                     </div>
-                    <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
+                    <h3 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
                       우리의 비전
                     </h3>
                     <div className="space-y-4 sm:space-y-6">
-                      <p className="font-ui text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed tracking-wide">
+                      <p className="font-ui text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed tracking-normal">
                         <span className="font-semibold text-gray-900 dark:text-white">(주) 바이칼시스템즈</span>는 AI와 RPA 기술을 활용하여 
                         공공기관과 민간기업의 업무 효율성을 혁신하는 전문 기업입니다.
                       </p>
-                      <p className="font-ui text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed tracking-wide">
+                      <p className="font-ui text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed tracking-normal">
                         공공데이터 API 활용부터 요양병원, 일반병원, 치매 어르신 복지정책 적용까지, 
                         실질적인 <span className="font-semibold text-indigo-600 dark:text-indigo-400">사회적 가치</span>를 창출하는 
                         바이브코딩 솔루션을 제공합니다.
@@ -162,7 +162,7 @@ export default function AboutSection() {
                         CORE COMPETENCY
                       </span>
                     </div>
-                    <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
+                    <h3 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
                       핵심 역량
                     </h3>
                     <ul className="space-y-4 sm:space-y-5">
@@ -174,7 +174,7 @@ export default function AboutSection() {
                         <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mt-1 group-hover:scale-110 transition-transform duration-300">
                           <div className="w-2 h-2 bg-white rounded-full"></div>
                         </div>
-                        <span className="ml-4 font-ui text-base sm:text-lg text-gray-700 dark:text-gray-300 tracking-wide group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
+                        <span className="ml-4 font-ui text-sm sm:text-base text-gray-700 dark:text-gray-300 tracking-normal group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
                           AI 기반 업무 자동화 솔루션
                         </span>
                       </motion.li>
@@ -186,7 +186,7 @@ export default function AboutSection() {
                         <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mt-1 group-hover:scale-110 transition-transform duration-300">
                           <div className="w-2 h-2 bg-white rounded-full"></div>
                         </div>
-                        <span className="ml-4 font-ui text-base sm:text-lg text-gray-700 dark:text-gray-300 tracking-wide group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
+                        <span className="ml-4 font-ui text-sm sm:text-base text-gray-700 dark:text-gray-300 tracking-normal group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
                           RPA를 활용한 업무 편의성 향상
                         </span>
                       </motion.li>
@@ -198,7 +198,7 @@ export default function AboutSection() {
                         <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-pink-500 to-red-500 rounded-full flex items-center justify-center mt-1 group-hover:scale-110 transition-transform duration-300">
                           <div className="w-2 h-2 bg-white rounded-full"></div>
                         </div>
-                        <span className="ml-4 font-ui text-base sm:text-lg text-gray-700 dark:text-gray-300 tracking-wide group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
+                        <span className="ml-4 font-ui text-sm sm:text-base text-gray-700 dark:text-gray-300 tracking-normal group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
                           공공데이터 API 활용 및 공급
                         </span>
                       </motion.li>
@@ -210,7 +210,7 @@ export default function AboutSection() {
                         <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mt-1 group-hover:scale-110 transition-transform duration-300">
                           <div className="w-2 h-2 bg-white rounded-full"></div>
                         </div>
-                        <span className="ml-4 font-ui text-base sm:text-lg text-gray-700 dark:text-gray-300 tracking-wide group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
+                        <span className="ml-4 font-ui text-sm sm:text-base text-gray-700 dark:text-gray-300 tracking-normal group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
                           헬스케어 및 복지정책 시스템
                         </span>
                       </motion.li>
@@ -244,10 +244,10 @@ export default function AboutSection() {
                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 to-purple-50/50 dark:from-indigo-950/20 dark:to-purple-950/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   <div className="relative">
-                    <dt className="font-ui text-sm sm:text-base font-medium text-gray-600 dark:text-gray-400 tracking-wide mb-2 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
+                    <dt className="font-ui text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 tracking-normal mb-2 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
                       {stat.name}
                     </dt>
-                    <dd className="font-heading text-2xl xs:text-3xl sm:text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent tracking-tight">
+                    <dd className="font-heading text-xl xs:text-2xl sm:text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent tracking-tight">
                       {stat.value}
                     </dd>
                   </div>
@@ -274,12 +274,12 @@ export default function AboutSection() {
                   OUR VALUES
                 </span>
               </div>
-              <h3 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
+              <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
                 <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
                   우리의 가치
                 </span>
               </h3>
-              <p className="font-ui text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto tracking-wide">
+              <p className="font-ui text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto tracking-normal">
                 바이칼시스템즈가 추구하는 핵심 가치들입니다.
               </p>
             </div>
@@ -305,11 +305,11 @@ export default function AboutSection() {
                       <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 -z-10"></div>
                     </div>
                     
-                    <h4 className="font-heading text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent dark:group-hover:from-indigo-400 dark:group-hover:to-purple-400 transition-all duration-500 tracking-tight">
+                    <h4 className="font-heading text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent dark:group-hover:from-indigo-400 dark:group-hover:to-purple-400 transition-all duration-500 tracking-tight">
                       {value.name}
                     </h4>
                     
-                    <p className="font-ui text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed tracking-wide group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
+                    <p className="font-ui text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed tracking-normal group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
                       {value.description}
                     </p>
                   </div>

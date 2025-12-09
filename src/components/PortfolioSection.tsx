@@ -140,12 +140,12 @@ export default function PortfolioSection() {
                 PORTFOLIO
               </span>
             </div>
-            <h2 className="font-heading text-display-lg xs:text-display-xl sm:text-display-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 sm:mb-8">
+            <h2 className="font-heading text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 sm:mb-8">
               <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
                 {t('portfolio.title')}
               </span>
             </h2>
-            <p className="font-ui text-xl xs:text-2xl sm:text-3xl text-gray-600 dark:text-gray-300 leading-relaxed tracking-wide max-w-3xl mx-auto">
+            <p className="font-ui text-base xs:text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed tracking-normal max-w-3xl mx-auto">
               {t('portfolio.subtitle')}
             </p>
           </motion.div>
@@ -233,11 +233,11 @@ export default function PortfolioSection() {
                   </div>
 
                   {/* Premium Title */}
-                  <h3 className="font-heading text-lg xs:text-xl sm:text-2xl font-bold text-gray-900 dark:text-white group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent dark:group-hover:from-indigo-400 dark:group-hover:to-purple-400 transition-all duration-500 tracking-tight mb-3">
+                  <h3 className="font-heading text-base xs:text-lg sm:text-xl font-bold text-gray-900 dark:text-white group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent dark:group-hover:from-indigo-400 dark:group-hover:to-purple-400 transition-all duration-500 tracking-tight mb-3">
                     {item.title}
                   </h3>
                   
-                  <p className="font-ui text-sm xs:text-base text-gray-600 dark:text-gray-300 leading-relaxed tracking-wide mb-4">
+                  <p className="font-ui text-xs xs:text-sm text-gray-600 dark:text-gray-300 leading-relaxed tracking-normal mb-4">
                     {item.description}
                   </p>
 
@@ -262,14 +262,14 @@ export default function PortfolioSection() {
                     {item.features.map((feature, featureIndex) => (
                       <motion.div 
                         key={feature} 
-                        className="flex items-center font-ui text-sm text-gray-600 dark:text-gray-300 group/feature hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
+                        className="flex items-center font-ui text-xs sm:text-sm text-gray-600 dark:text-gray-300 group/feature hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300"
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: featureIndex * 0.1 }}
                         whileHover={{ x: 4 }}
                       >
                         <div className="mr-3 w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full group-hover/feature:scale-125 transition-transform duration-300" />
-                        <span className="tracking-wide">{feature}</span>
+                        <span className="tracking-normal">{feature}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -281,7 +281,7 @@ export default function PortfolioSection() {
                         href={item.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/btn inline-flex items-center font-ui font-semibold text-sm sm:text-base bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                        className="group/btn inline-flex items-center font-ui font-semibold text-xs sm:text-sm bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                         whileHover={{ x: 4, scale: 1.05 }}
                         whileTap={{ scale: 0.98 }}
                       >

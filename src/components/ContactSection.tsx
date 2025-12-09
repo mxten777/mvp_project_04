@@ -152,12 +152,12 @@ export default function ContactSection() {
                 CONTACT US
               </span>
             </div>
-            <h2 className="font-heading text-display-lg xs:text-display-xl sm:text-display-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 sm:mb-8">
+            <h2 className="font-heading text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 sm:mb-8">
               <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
                 {t('contact.title')}
               </span>
             </h2>
-            <p className="font-ui text-xl xs:text-2xl sm:text-3xl text-gray-600 dark:text-gray-300 leading-relaxed tracking-wide max-w-3xl mx-auto">
+            <p className="font-ui text-base xs:text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed tracking-normal max-w-3xl mx-auto">
               전문 컨설턴트가 고객님의 요구사항에 맞는 <span className="font-semibold text-indigo-600 dark:text-indigo-400">최적의 솔루션</span>을 제안해드립니다.
             </p>
           </motion.div>
@@ -177,7 +177,7 @@ export default function ContactSection() {
                   GET IN TOUCH
                 </span>
               </div>
-              <h3 className="font-heading text-2xl xs:text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-8 sm:mb-12 tracking-tight">
+              <h3 className="font-heading text-xl xs:text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8 sm:mb-12 tracking-tight">
                 연락처 정보
               </h3>
               
@@ -192,8 +192,8 @@ export default function ContactSection() {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <p className="font-ui font-semibold text-base sm:text-lg text-gray-900 dark:text-white mb-1 tracking-wide">전화번호</p>
-                    <p className="font-ui text-sm sm:text-base text-gray-600 dark:text-gray-300">010-2380-4691</p>
+                    <p className="font-ui font-semibold text-sm sm:text-base text-gray-900 dark:text-white mb-1 tracking-normal">전화번호</p>
+                    <p className="font-ui text-xs sm:text-sm text-gray-600 dark:text-gray-300">010-2380-4691</p>
                   </div>
                 </motion.div>
 
@@ -207,8 +207,8 @@ export default function ContactSection() {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <p className="font-ui font-semibold text-base sm:text-lg text-gray-900 dark:text-white mb-1 tracking-wide">이메일</p>
-                    <p className="font-ui text-sm sm:text-base text-gray-600 dark:text-gray-300">mxten777@gmail.com</p>
+                    <p className="font-ui font-semibold text-sm sm:text-base text-gray-900 dark:text-white mb-1 tracking-normal">이메일</p>
+                    <p className="font-ui text-xs sm:text-sm text-gray-600 dark:text-gray-300">mxten777@gmail.com</p>
                   </div>
                 </motion.div>
 
@@ -222,8 +222,8 @@ export default function ContactSection() {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <p className="font-ui font-semibold text-base sm:text-lg text-gray-900 dark:text-white mb-1 tracking-wide">주소</p>
-                    <p className="font-ui text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <p className="font-ui font-semibold text-sm sm:text-base text-gray-900 dark:text-white mb-1 tracking-normal">주소</p>
+                    <p className="font-ui text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                       서울특별시 강남구 역삼로 138<br />
                       동광빌딩 5층
                     </p>
@@ -237,7 +237,7 @@ export default function ContactSection() {
                     PROCESS
                   </span>
                 </div>
-                <h4 className="font-heading text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-8 tracking-tight">상담 프로세스</h4>
+                <h4 className="font-heading text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-8 tracking-tight">상담 프로세스</h4>
                 <div className="space-y-6">
                   {[
                     { step: 1, title: "문의 접수", color: "from-indigo-500 to-purple-500" },
