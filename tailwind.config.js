@@ -158,6 +158,33 @@ module.exports = {
         wider: '0.05em',
         widest: '0.1em',
       },
+      // Figma visual tokens (placeholders). These map to CSS variables
+      // Values should be filled with exact Figma token values when available.
+      figma: {
+        colors: {
+          primary: 'var(--figma-primary-500)',
+          neutral: {
+            100: 'var(--figma-neutral-100)',
+            500: 'var(--figma-neutral-500)',
+            900: 'var(--figma-neutral-900)',
+          },
+          bg: 'var(--figma-bg)',
+          border: 'var(--figma-border)',
+          text: 'var(--figma-text)'
+        },
+        spacing: {
+          '1': 'var(--figma-space-4)',
+          '2': 'var(--figma-space-8)',
+          '3': 'var(--figma-space-12)',
+          '4': 'var(--figma-space-16)',
+          '6': 'var(--figma-space-24)',
+          '8': 'var(--figma-space-32)'
+        },
+        radius: {
+          card: 'var(--figma-radius-card)',
+          button: 'var(--figma-radius-button)'
+        }
+      },
     },
   },
   plugins: [],

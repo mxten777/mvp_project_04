@@ -151,3 +151,38 @@ button {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* KETRI UI Standard v1.0 - Freeze scaffolding and Figma token placeholders
+   - Do NOT change KETRI layout behavior here.
+   - Replace the --figma-* values with exact Figma token values when available.
+*/
+:root {
+  /* KETRI required header height variable (placeholder) */
+  --app-header-h: 64px;
+
+  /* Figma visual token placeholders (fill from Figma) */
+  --figma-primary-500: #2563eb;
+  --figma-neutral-100: #f5f5f5;
+  --figma-neutral-500: #6b7280;
+  --figma-neutral-900: #111827;
+  --figma-bg: var(--background);
+  --figma-border: #e5e7eb;
+  --figma-text: var(--foreground);
+
+  /* Spacing tokens */
+  --figma-space-4: 4px;
+  --figma-space-8: 8px;
+  --figma-space-12: 12px;
+  --figma-space-16: 16px;
+  --figma-space-24: 24px;
+  --figma-space-32: 32px;
+
+  /* Radius tokens */
+  --figma-radius-card: 12px;
+  --figma-radius-button: 9999px;
+}
+
+/* KETRI structural rules (anchor safety / hero handling) - preserve these rules */
+[data-has-hero] { padding-top: var(--app-header-h); }
+[data-hero-bleed] { margin-top: calc(var(--app-header-h) * -1); }
+:target { scroll-margin-top: var(--app-header-h); }
