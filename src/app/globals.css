@@ -186,3 +186,10 @@ button {
 [data-has-hero] { padding-top: var(--app-header-h); }
 [data-hero-bleed] { margin-top: calc(var(--app-header-h) * -1); }
 :target { scroll-margin-top: var(--app-header-h); }
+
+/* KETRI required header inner height (do not change behavior) */
+.app-header-inner {
+  height: var(--app-header-h);
+  display: flex;
+  align-items: center;
+}

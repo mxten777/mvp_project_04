@@ -25,12 +25,12 @@ export default function Header() {
     <>
       {/* 디버그 배너 제거됨 */}
       <motion.header
-        className="fixed inset-x-0 top-0 z-50 transition-all duration-300 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 h-16 shadow-md border-b border-blue-800/40"
+        className="fixed inset-x-0 top-0 z-50 transition-all duration-300 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 shadow-md border-b border-blue-800/40"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <nav className="flex items-center justify-between px-3 py-2 sm:px-4 lg:px-8 max-w-7xl mx-auto min-h-16">
+        <nav className="app-header-inner flex items-center justify-between px-3 py-2 sm:px-4 lg:px-8 max-w-7xl mx-auto">
           <motion.div
             className="flex items-center lg:flex-1 pl-0"
             whileHover={{ scale: 1.05 }}
