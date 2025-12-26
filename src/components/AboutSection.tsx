@@ -82,7 +82,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="relative py-16 sm:py-24 md:py-32 bg-gradient-to-b from-white to-gray-50 dark:from-zinc-900 dark:to-zinc-800 transition-colors duration-500 overflow-hidden">
+    <section id="about" data-has-hero className="relative py-16 sm:py-24 md:py-32 bg-gradient-to-b from-white to-gray-50 dark:from-zinc-900 dark:to-zinc-800 transition-colors duration-500 overflow-hidden">
       {/* Premium Background Elements */}
       <div className="absolute inset-0 opacity-30">
         <FloatingElement className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-blue-400/20 to-indigo-600/20 rounded-full blur-3xl" />

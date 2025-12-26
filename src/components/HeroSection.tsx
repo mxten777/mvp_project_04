@@ -12,8 +12,8 @@ export default function HeroSection() {
   
   return (
     <>
-  <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-gradient dark:bg-gradient-to-br dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 pt-20 px-2 sm:px-0 transition-colors duration-500">
-  <div className="w-full h-px bg-primary/40 dark:bg-primary-dark/40 absolute left-0 z-10" style={{ top: '64px' }} />
+  <section data-hero-bleed className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-gradient dark:bg-gradient-to-br dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 px-2 sm:px-0 transition-colors duration-500">
+  <div className="w-full h-px bg-primary/40 dark:bg-primary-dark/40 absolute left-0 z-10" style={{ top: 'var(--app-header-h)' }} />
       
       {/* 인터랙티브 파티클 배경 */}
       <ParticleBackground className="z-0" />
