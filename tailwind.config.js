@@ -158,6 +158,26 @@ module.exports = {
         wider: '0.05em',
         widest: '0.1em',
       },
+      spacing: {
+        // 히어로 섹션 전용 디자인 토큰 (엔터프라이즈급 수직 리듬)
+        'hero-kicker-mb': '1rem',       // 16px - Kicker 하단 여백
+        'hero-title-mb': '2.5rem',      // 40px - 제목 하단 여백 (모바일)
+        'hero-title-mb-lg': '4rem',     // 64px - 제목 하단 여백 (데스크톱)
+        'hero-slogan-mb': '2rem',       // 32px - 슬로건 하단 (모바일)
+        'hero-slogan-mb-lg': '3rem',    // 48px - 슬로건 하단 (데스크톱)
+        'hero-desc-mb': '3rem',         // 48px - 설명 하단 (모바일)
+        'hero-desc-mb-lg': '4rem',      // 64px - 설명 하단 (데스크톱)
+        'hero-points-mb': '3.5rem',     // 56px - 핵심 포인트 하단 (모바일)
+        'hero-points-mb-lg': '5rem',    // 80px - 핵심 포인트 하단 (데스크톱)
+      },
+      lineHeight: {
+        // 히어로 타이포그래피 전용 행간
+        'hero-title': '1.25',           // H1 제목용 (여유로운 호흡)
+        'hero-title-lg': '1.3',         // H1 제목용 (큰 화면)
+        'hero-slogan': '1.6',           // 슬로건용 (독립된 위계)
+        'hero-desc': '1.7',             // 설명 문단용 (가독성 최우선)
+        'hero-desc-lg': '1.75',         // 설명 문단 (큰 화면)
+      },
       // Figma visual tokens (placeholders). These map to CSS variables
       // Values should be filled with exact Figma token values when available.
       figma: {

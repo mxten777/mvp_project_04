@@ -21,6 +21,24 @@ export default function Header() {
     { name: t('common.contact'), href: '#contact' },
   ];
 
+  // 빠른 스크롤 핸들러
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      const headerOffset = 80; // 헤더 높이 + 여유 공간
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <>
       {/* 디버그 배너 제거됨 */}
@@ -86,12 +104,13 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <Link
+                <a
                   href={item.href}
-                  className="text-sm font-semibold leading-6 transition-all duration-300 hover:scale-105 text-white hover:text-blue-200"
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="text-sm font-semibold leading-6 transition-all duration-300 hover:scale-105 text-white hover:text-blue-200 cursor-pointer"
                 >
                   {item.name}
-                </Link>
+                </a>
               </motion.div>
             ))}
           </div>
@@ -140,14 +159,17 @@ export default function Header() {
                 <div className="-my-6 divide-y divide-gray-500/10">
                   <div className="space-y-2 py-6">
                     {navigation.map((item) => (
-                      <Link
+                      <a
                         key={item.name}
                         href={item.href}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={(e) => {
+                          handleNavClick(e, item.href);
+                          setMobileMenuOpen(false);
+                        }}
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
                       >
                         {item.name}
-                      </Link>
+                      </a>
                     ))}
                   </div>
                   <div className="py-6 space-y-4">

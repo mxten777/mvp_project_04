@@ -46,9 +46,22 @@ a {
   text-decoration: none;
 }
 
-/* 스무스 스크롤 */
+/* 스무스 스크롤 - 빠른 반응성 */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* 헤더 높이 + 여백 */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* 스크롤바 스타일링 */
@@ -92,6 +105,19 @@ html {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* 헤더 높이 + 여백 */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {

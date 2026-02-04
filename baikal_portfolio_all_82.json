@@ -1,0 +1,658 @@
+[
+  {
+    "no": 1,
+    "category": "홈페이지/랜딩",
+    "title": "바이칼시스템즈 홈페이지",
+    "date": 251018,
+    "url": "https://mvp-project-04.vercel.app/",
+    "thumbnail": "mvp-project-04.png"
+  },
+  {
+    "no": 2,
+    "category": "포트폴리오/소개",
+    "title": "바이브 코딩 MVP 소개자료(포트폴리오) 웹앱",
+    "date": 251016,
+    "url": "http://baikalsys.kr/",
+    "thumbnail": "baikalsys-kr.png"
+  },
+  {
+    "no": 3,
+    "category": "산업/업무시스템",
+    "title": "모바일/태블릿 기반 디지털 작업지시서",
+    "date": 251004,
+    "url": "https://mxten-project-06.vercel.app/",
+    "thumbnail": "mxten-project-06.png"
+  },
+  {
+    "no": 4,
+    "category": "홈페이지/랜딩",
+    "title": "국회의원 랜딩페이지 MVP",
+    "date": 251018,
+    "url": "https://lawmaker-landing.vercel.app/",
+    "thumbnail": "lawmaker-landing.png"
+  },
+  {
+    "no": 5,
+    "category": "예약/예약시스템",
+    "title": "바이칼 리조트 홈페이지 및 예약시스템",
+    "date": 251003,
+    "url": "https://mvp-project-26.vercel.app/",
+    "thumbnail": "mvp-project-26.png"
+  },
+  {
+    "no": 6,
+    "category": "홈페이지/랜딩",
+    "title": "한국코프론 홈페이지",
+    "date": 260109,
+    "url": "https://mvp-project-03.vercel.app/",
+    "thumbnail": "mvp-project-03.png"
+  },
+  {
+    "no": 7,
+    "category": "홈페이지/랜딩",
+    "title": "박신환 행정사 홈페이지",
+    "date": 251010,
+    "url": "https://new-project-04.vercel.app/",
+    "thumbnail": "new-project-04.png"
+  },
+  {
+    "no": 8,
+    "category": "홈페이지/랜딩",
+    "title": "박영진치과 홈페이지",
+    "date": 251028,
+    "url": "https://new-project-20.vercel.app/",
+    "thumbnail": "new-project-20.png"
+  },
+  {
+    "no": 9,
+    "category": "홈페이지/랜딩",
+    "title": "선우 이비인후과 홈페이지",
+    "date": 251018,
+    "url": "https://new-project-30.vercel.app/",
+    "thumbnail": "new-project-30.png"
+  },
+  {
+    "no": 10,
+    "category": "홈페이지/랜딩",
+    "title": "성혜 정형외과 의원",
+    "date": 251018,
+    "url": "https://new-project-40.vercel.app/",
+    "thumbnail": "new-project-40.png"
+  },
+  {
+    "no": 11,
+    "category": "의료/AI기능",
+    "title": "성혜 정형외과 의원_AI 증상 체크",
+    "date": 251018,
+    "url": "https://new-project-40.vercel.app/ai-symptom-check/",
+    "thumbnail": "new-project-40.png"
+  },
+  {
+    "no": 12,
+    "category": "예약/예약시스템",
+    "title": "성혜 정형외과 의원_실시간 예약",
+    "date": 251018,
+    "url": "https://new-project-40.vercel.app/appointment/",
+    "thumbnail": "new-project-40.png"
+  },
+  {
+    "no": 13,
+    "category": "홈페이지/랜딩",
+    "title": "만송시스템 홈페이지(버전1)",
+    "date": 251016,
+    "url": "https://mvp-project-09.vercel.app/",
+    "thumbnail": "mvp-project-09.png"
+  },
+  {
+    "no": 14,
+    "category": "홈페이지/랜딩",
+    "title": "만송시스템 홈페이지(버전2)",
+    "date": 251209,
+    "url": "https://mxten-project-30.vercel.app/",
+    "thumbnail": "mxten-project-30.png"
+  },
+  {
+    "no": 15,
+    "category": "리뉴얼/브랜딩",
+    "title": "디비인포 리뉴얼",
+    "date": 260102,
+    "url": "https://dbinfo-final.vercel.app/",
+    "thumbnail": "dbinfo-final.png"
+  },
+  {
+    "no": 16,
+    "category": "운영/관리자",
+    "title": "디비인포 관리자모드",
+    "date": 260102,
+    "url": "https://dbinfo-final.vercel.app/admin/login",
+    "thumbnail": "dbinfo-final-admin.png"
+  },
+  {
+    "no": 1,
+    "category": "홈페이지/랜딩",
+    "title": "아이뜨락 어린이집 홈페이지",
+    "date": 251004,
+    "url": "https://new-project-02.vercel.app/",
+    "thumbnail": "new-project-02.png"
+  },
+  {
+    "no": 2,
+    "category": "복지/돌봄",
+    "title": "바이칼 재가복지센터 홈페이지",
+    "date": 251112,
+    "url": "https://mvp-project-18.vercel.app/",
+    "thumbnail": "mvp-project-18.png"
+  },
+  {
+    "no": 3,
+    "category": "공공/RPA",
+    "title": "시군구 RPA 통합 플랫폼 앱",
+    "date": 260102,
+    "url": "https://mvp-project-14.vercel.app/",
+    "thumbnail": "mvp-project-14.png"
+  },
+  {
+    "no": 4,
+    "category": "복지/돌봄",
+    "title": "재가복지센터 통합관리 시스템",
+    "date": 251010,
+    "url": "https://caring-plus.vercel.app/login",
+    "thumbnail": "caring-plus.png"
+  },
+  {
+    "no": 5,
+    "category": "예약/예약시스템",
+    "title": "공공시설 예약 통합 플랫폼",
+    "date": 251011,
+    "url": "https://mvp-project-28.vercel.app/",
+    "thumbnail": "mvp-project-28.png"
+  },
+  {
+    "no": 6,
+    "category": "헬스/생활",
+    "title": "약 복용관리 플랫폼",
+    "date": 251011,
+    "url": "https://mvp-project-10.vercel.app/",
+    "thumbnail": "mvp-project-10.png"
+  },
+  {
+    "no": 7,
+    "category": "게임/엔터",
+    "title": "슬롯머신형 일본 파칭코 웹 MVP",
+    "date": 251116,
+    "url": "https://mxten-project-10.vercel.app/",
+    "thumbnail": "mxten-project-10.png"
+  },
+  {
+    "no": 8,
+    "category": "공공/민원",
+    "title": "주민 제보·민원 실시간 처리 웹앱",
+    "date": 251011,
+    "url": "https://mvp-project-30.vercel.app/",
+    "thumbnail": "mvp-project-30.png"
+  },
+  {
+    "no": 9,
+    "category": "복지/대여",
+    "title": "복지용품·공유물품 대여 플랫폼",
+    "date": 251011,
+    "url": "https://mvp-project-32.vercel.app/",
+    "thumbnail": "mvp-project-32.png"
+  },
+  {
+    "no": 10,
+    "category": "교육/AI",
+    "title": "AI기반 맞춤형 교육 플랫폼",
+    "date": 251002,
+    "url": "https://jdx-project-01.vercel.app/",
+    "thumbnail": "jdx-project-01.png"
+  },
+  {
+    "no": 11,
+    "category": "교육/AI",
+    "title": "직장인을 위한 AI 교육 플랫폼",
+    "date": 251012,
+    "url": "https://jdx-project-02.vercel.app/",
+    "thumbnail": "jdx-project-02.png"
+  },
+  {
+    "no": 12,
+    "category": "콘텐츠/크리에이티브",
+    "title": "AI 작사·작곡 도우미 플랫폼",
+    "date": 251110,
+    "url": "https://music-project-01.vercel.app/",
+    "thumbnail": "music-project-01.png"
+  },
+  {
+    "no": 13,
+    "category": "일자리/매칭",
+    "title": "AI 중장년 일자리 플랫폼",
+    "date": 251013,
+    "url": "https://mvp-project-06.vercel.app/",
+    "thumbnail": "mvp-project-06.png"
+  },
+  {
+    "no": 14,
+    "category": "포트폴리오/소개",
+    "title": "바이브코딩 MVP 포트폴리오2",
+    "date": 251209,
+    "url": "https://mxten-project-20.vercel.app/",
+    "thumbnail": "mxten-project-20.png"
+  },
+  {
+    "no": 1,
+    "category": "금융/장부",
+    "title": "AI 간편장부 앱",
+    "date": "251020(추정)",
+    "url": "https://mvp-project-12.vercel.app/",
+    "thumbnail": "mvp-project-12.png"
+  },
+  {
+    "no": 2,
+    "category": "복지/알림",
+    "title": "시니어 복지정보 알림 앱",
+    "date": 251022,
+    "url": "https://mvp-project-08.vercel.app/",
+    "thumbnail": "mvp-project-08.png"
+  },
+  {
+    "no": 3,
+    "category": "복지/추천",
+    "title": "복지서비스 추천 앱",
+    "date": 251021,
+    "url": "https://mvp-project-20.vercel.app/",
+    "thumbnail": "mvp-project-20.png"
+  },
+  {
+    "no": 4,
+    "category": "에너지/주유소",
+    "title": "AI 주유소 플랫폼",
+    "date": 251022,
+    "url": "https://fuel-project-05.vercel.app/",
+    "thumbnail": "fuel-project-05.png"
+  },
+  {
+    "no": 5,
+    "category": "팀/운영도구",
+    "title": "공정한 팀 배정 웹앱",
+    "date": 251108,
+    "url": "https://jdx-project-05.vercel.app/",
+    "thumbnail": "jdx-project-05.png"
+  },
+  {
+    "no": 6,
+    "category": "취미/기록",
+    "title": "추억 만지기 웹앱",
+    "date": 251108,
+    "url": "https://jdx-project-10.vercel.app/",
+    "thumbnail": "jdx-project-10.png"
+  },
+  {
+    "no": 7,
+    "category": "커뮤니티",
+    "title": "우리끼리 당근(동호당) 웹앱",
+    "date": 251028,
+    "url": "https://jdx-project-12.vercel.app/",
+    "thumbnail": "jdx-project-12.png"
+  },
+  {
+    "no": 8,
+    "category": "금융/투자",
+    "title": "프리미엄 로또 번호 생성기",
+    "date": 251108,
+    "url": "https://jdx-project-20.vercel.app/",
+    "thumbnail": "jdx-project-20.png"
+  },
+  {
+    "no": 9,
+    "category": "금융/투자",
+    "title": "프리미엄 코인 추천 웹앱",
+    "date": 251029,
+    "url": "https://jdx-project-30.vercel.app/",
+    "thumbnail": "jdx-project-30.png"
+  },
+  {
+    "no": 10,
+    "category": "브랜딩/쇼케이스",
+    "title": "VIBE CODING 브랜딩 MVP Universe",
+    "date": 251102,
+    "url": "https://jdx-project-50.vercel.app/",
+    "thumbnail": "jdx-project-50.png"
+  },
+  {
+    "no": 11,
+    "category": "콘텐츠/문학",
+    "title": "프리미엄 문학 플랫폼",
+    "date": 251103,
+    "url": "https://baikal-project-01.vercel.app/",
+    "thumbnail": "baikal-project-01.png"
+  },
+  {
+    "no": 12,
+    "category": "유틸/도구",
+    "title": "신조어 변환 웹앱(ZLang Decoder)",
+    "date": 251103,
+    "url": "https://jdx-project-60.vercel.app/",
+    "thumbnail": "jdx-project-60.png"
+  },
+  {
+    "no": 13,
+    "category": "커뮤니티/세대",
+    "title": "세대소통 AI 플랫폼 Generation Bridge",
+    "date": 251104,
+    "url": "https://jdx-project-70.vercel.app/",
+    "thumbnail": "jdx-project-70.png"
+  },
+  {
+    "no": 14,
+    "category": "유틸/도구",
+    "title": "프롬프트 자판기",
+    "date": 251104,
+    "url": "https://baikal-project-10.vercel.app/",
+    "thumbnail": "baikal-project-10.png"
+  },
+  {
+    "no": 15,
+    "category": "교육/아카데미",
+    "title": "Baikal Systems Academy",
+    "date": 251104,
+    "url": "https://vibe-academy-mvp.vercel.app/",
+    "thumbnail": "vibe-academy-mvp.png"
+  },
+  {
+    "no": 1,
+    "category": "콘텐츠/크리에이티브",
+    "title": "시→노래 앨범 생성 서비스",
+    "date": 251110,
+    "url": "https://music-project-02.vercel.app/",
+    "thumbnail": "music-project-02.png"
+  },
+  {
+    "no": 2,
+    "category": "업무/SaaS(Hub)",
+    "title": "Vibe Office Hub",
+    "date": 251113,
+    "url": "https://gen-project-01.vercel.app/",
+    "thumbnail": "gen-project-01.png"
+  },
+  {
+    "no": 3,
+    "category": "공공/SaaS(Hub)",
+    "title": "Vibe Public Hub",
+    "date": 251114,
+    "url": "https://pub-project-01.vercel.app/",
+    "thumbnail": "pub-project-01.png"
+  },
+  {
+    "no": 4,
+    "category": "주문/키오스크",
+    "title": "음성 주문 시스템(바이브 오더)",
+    "date": 251117,
+    "url": "https://pub-project-02.vercel.app/",
+    "thumbnail": "pub-project-02.png"
+  },
+  {
+    "no": 5,
+    "category": "업무/SaaS(Hub)",
+    "title": "Vibe Finance Hub",
+    "date": 251117,
+    "url": "https://gen-project-02.vercel.app/",
+    "thumbnail": "gen-project-02.png"
+  },
+  {
+    "no": 6,
+    "category": "업무/SaaS(Hub)",
+    "title": "Vibe People Hub",
+    "date": 251117,
+    "url": "https://gen-project-03.vercel.app/",
+    "thumbnail": "gen-project-03.png"
+  },
+  {
+    "no": 7,
+    "category": "산업/MES",
+    "title": "MES WorkFlow Hub",
+    "date": 251117,
+    "url": "https://gen-project-04.vercel.app/",
+    "thumbnail": "gen-project-04.png"
+  },
+  {
+    "no": 8,
+    "category": "대기/알림(SaaS)",
+    "title": "Q-PASS 대기표 & 알림 SaaS",
+    "date": 251118,
+    "url": "https://baikal-project-50.vercel.app/",
+    "thumbnail": "baikal-project-50.png"
+  },
+  {
+    "no": 9,
+    "category": "행사/운영",
+    "title": "강둑 송년회 웹앱",
+    "date": 251202,
+    "url": "https://gen-project-10.vercel.app/",
+    "thumbnail": "gen-project-10.png"
+  },
+  {
+    "no": 10,
+    "category": "출입/QR",
+    "title": "표준 QR출입 & 자동 팀배정 플랫폼",
+    "date": 251220,
+    "url": "https://gen-project-20.vercel.app/",
+    "thumbnail": "gen-project-20.png"
+  },
+  {
+    "no": 11,
+    "category": "트렌드/분석",
+    "title": "VibeRadar 트렌드 레이더",
+    "date": 251120,
+    "url": "https://grok-project-01.vercel.app/",
+    "thumbnail": "grok-project-01.png"
+  },
+  {
+    "no": 12,
+    "category": "포트폴리오/관리",
+    "title": "포트폴리오 관리 플랫폼",
+    "date": 251121,
+    "url": "https://grok-project-10.vercel.app/",
+    "thumbnail": "grok-project-10.png"
+  },
+  {
+    "no": 13,
+    "category": "홈페이지/랜딩",
+    "title": "만송시스템 홈페이지(grok)",
+    "date": 251123,
+    "url": "https://grok-project-20.vercel.app/",
+    "thumbnail": "grok-project-20.png"
+  },
+  {
+    "no": 14,
+    "category": "콘텐츠/컬렉션",
+    "title": "게임컬렉션(grok)",
+    "date": 251123,
+    "url": "https://grok-project-21.vercel.app/",
+    "thumbnail": "grok-project-21.png"
+  },
+  {
+    "no": 15,
+    "category": "쇼케이스/전시",
+    "title": "프로젝트 쇼케이스(grok)",
+    "date": 251123,
+    "url": "https://grok-project-22.vercel.app/",
+    "thumbnail": "grok-project-22.png"
+  },
+  {
+    "no": 1,
+    "category": "경매/거래",
+    "title": "QR 경매(grok)",
+    "date": 251124,
+    "url": "https://grok-project-23.vercel.app/",
+    "thumbnail": "grok-project-23.png"
+  },
+  {
+    "no": 2,
+    "category": "주문/키오스크",
+    "title": "음성 주문 플랫폼(grok)",
+    "date": 251124,
+    "url": "https://grok-project-24.vercel.app/",
+    "thumbnail": "grok-project-24.png"
+  },
+  {
+    "no": 3,
+    "category": "행사/운영",
+    "title": "삼광 30회 송년회 웹",
+    "date": 251125,
+    "url": "https://grok-project-30.vercel.app/",
+    "thumbnail": "grok-project-30.png"
+  },
+  {
+    "no": 4,
+    "category": "행사/운영",
+    "title": "강둑 송년회 웹앱",
+    "date": 251125,
+    "url": "https://grok-project-40.vercel.app/",
+    "thumbnail": "grok-project-40.png"
+  },
+  {
+    "no": 5,
+    "category": "홈페이지/리뉴얼",
+    "title": "KETRI 웹사이트 리뉴얼",
+    "date": 251212,
+    "url": "https://ketri-project-10.vercel.app/",
+    "thumbnail": "ketri-project-10.png"
+  },
+  {
+    "no": 6,
+    "category": "예약/좌석",
+    "title": "실시간 좌석 배정 시스템",
+    "date": 251128,
+    "url": "https://grok-project-50.vercel.app/login",
+    "thumbnail": "grok-project-50.png"
+  },
+  {
+    "no": 7,
+    "category": "도서관/OPAC",
+    "title": "도서 검색(OPAC) 웹앱",
+    "date": 251130,
+    "url": "https://grok-project-55.vercel.app/",
+    "thumbnail": "grok-project-55.png"
+  },
+  {
+    "no": 8,
+    "category": "도서관/대여",
+    "title": "도서 대여·반납 자동화",
+    "date": 251130,
+    "url": "https://grok-project-56.vercel.app/",
+    "thumbnail": "grok-project-56.png"
+  },
+  {
+    "no": 9,
+    "category": "도서관/예약",
+    "title": "도서관 예약 시스템",
+    "date": 251130,
+    "url": "https://grok-project-57.vercel.app/",
+    "thumbnail": "grok-project-57.png"
+  },
+  {
+    "no": 10,
+    "category": "도서관/운영",
+    "title": "도서관 프로그램·강좌 관리",
+    "date": 251130,
+    "url": "https://grok-project-58.vercel.app/",
+    "thumbnail": "grok-project-58.png"
+  },
+  {
+    "no": 11,
+    "category": "콘텐츠/문학",
+    "title": "감성 시 플랫폼",
+    "date": 251203,
+    "url": "https://grok-project-70.vercel.app/",
+    "thumbnail": "grok-project-70.png"
+  },
+  {
+    "no": 12,
+    "category": "유통/부품",
+    "title": "에어컨 냉매·가스·부품 유통",
+    "date": 251204,
+    "url": "https://grokproject72.vercel.app/",
+    "thumbnail": "grokproject72.png"
+  },
+  {
+    "no": 13,
+    "category": "홈페이지/기관",
+    "title": "한국환경안전연구소 공식 홈페이지",
+    "date": 260121,
+    "url": "https://ketri-project-01.vercel.app/",
+    "thumbnail": "ketri-project-01.png"
+  },
+  {
+    "no": 14,
+    "category": "업무/그룹웨어",
+    "title": "룹웨어+업무메신저",
+    "date": 251207,
+    "url": "https://grok-project-73.vercel.app/login",
+    "thumbnail": "grok-project-73.png"
+  },
+  {
+    "no": 15,
+    "category": "HR/근태",
+    "title": "연차 관리 시스템",
+    "date": 251206,
+    "url": "https://grok-project-74.vercel.app/",
+    "thumbnail": "grok-project-74.png"
+  },
+  {
+    "no": 1,
+    "category": "문서/자동화",
+    "title": "BizDocs 문서 자동화",
+    "date": 251207,
+    "url": "https://grok-project-75.vercel.app/",
+    "thumbnail": "grok-project-75.png"
+  },
+  {
+    "no": 2,
+    "category": "문서/자동화",
+    "title": "AI 회의록 자동화 웹앱",
+    "date": 251213,
+    "url": "https://pub-project-03.vercel.app/",
+    "thumbnail": "pub-project-03.png"
+  },
+  {
+    "no": 3,
+    "category": "공공/보상",
+    "title": "Compensa.AI 토지보상 플랫폼",
+    "date": 251213,
+    "url": "https://pub-project-04.vercel.app/login",
+    "thumbnail": "pub-project-04.png"
+  },
+  {
+    "no": 4,
+    "category": "FIGMA/코드변환",
+    "title": "FIGMA 코드 변환 플랫폼",
+    "date": 251214,
+    "url": "https://figma-projet-01.vercel.app/",
+    "thumbnail": "figma-projet-01.png"
+  },
+  {
+    "no": 5,
+    "category": "금융/화이트라벨",
+    "title": "농협/신협 화이트라벨 SaaS",
+    "date": 261226,
+    "url": "https://bank-project-01.vercel.app/",
+    "thumbnail": "bank-project-01.png"
+  },
+  {
+    "no": 6,
+    "category": "FIGMA/업종",
+    "title": "FIGMA 업종별",
+    "date": 251226,
+    "url": "https://figma-projet-02.vercel.app/",
+    "thumbnail": "figma-projet-02.png"
+  },
+  {
+    "no": 7,
+    "category": "홈페이지/랜딩",
+    "title": "광연자동차전문학원",
+    "date": 260112,
+    "url": "https://gen-project-30.vercel.app/",
+    "thumbnail": "gen-project-30.png"
+  }
+]

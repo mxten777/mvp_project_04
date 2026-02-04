@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import AnimatedElement from './AnimatedElement';
@@ -12,7 +12,9 @@ import {
   ChartBarIcon,
   ShieldCheckIcon,
   CloudIcon,
-  CpuChipIcon
+  CpuChipIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon
 } from '@heroicons/react/24/outline';
 
 interface PortfolioItem {
@@ -22,86 +24,390 @@ interface PortfolioItem {
   description: string;
   image: string;
   technologies: string[];
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   features: string[];
   demoUrl?: string;
 }
 
+interface PortfolioItemWithIcon extends PortfolioItem {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+}
+
+// 아이콘 매핑 함수
+const getIconForCategory = (category: string) => {
+  if (category.includes('홈페이지') || category.includes('랜딩')) return ComputerDesktopIcon;
+  if (category.includes('모바일') || category.includes('앱')) return DevicePhoneMobileIcon;
+  if (category.includes('AI') || category.includes('RPA')) return CpuChipIcon;
+  if (category.includes('관리자') || category.includes('보안')) return ShieldCheckIcon;
+  if (category.includes('분석') || category.includes('대시보드')) return ChartBarIcon;
+  if (category.includes('클라우드')) return CloudIcon;
+  return ComputerDesktopIcon;
+};
+
+const ITEMS_PER_PAGE = 12;
+
 const portfolioItems: PortfolioItem[] = [
+  // 홈페이지/랜딩 (8개)
   {
     id: 1,
-    title: 'AI 기반 진단 솔루션',
-    category: '헬스케어',
-    description: '의료진을 위한 AI 진단 보조 시스템',
-    image: '/api/placeholder/400/300',
-    technologies: ['AI/ML', 'Python', 'TensorFlow', 'React'],
-    icon: CpuChipIcon,
-    features: ['실시간 진단', '정확도 95%', '클라우드 기반'],
-  },
-  {
-    id: 2,
-    title: 'RPA 업무 자동화 시스템',
-    category: 'RPA',
-    description: '반복 업무 자동화를 통한 효율성 향상',
-    image: '/api/placeholder/400/300',
-    technologies: ['RPA', 'Python', 'Selenium', 'OCR'],
-    icon: ComputerDesktopIcon,
-    features: ['업무 효율 300% 향상', '24/7 자동 실행', '오류율 0.1%'],
-  },
-  {
-    id: 3,
-    title: '공공데이터 통합 플랫폼',
-    category: '공공데이터',
-    description: '정부 공공데이터 API 통합 및 시각화',
-    image: '/api/placeholder/400/300',
-    technologies: ['API', 'React', 'D3.js', 'Node.js'],
-    icon: CloudIcon,
-    features: ['실시간 데이터', '대시보드', 'API 통합'],
-  },
-  {
-    id: 4,
-    title: '스마트 헬스케어 앱',
-    category: '모바일',
-    description: '환자 관리 및 복지정책 연동 모바일 앱',
-    image: '/api/placeholder/400/300',
-    technologies: ['React Native', 'Firebase', 'AI', 'IoT'],
-    icon: DevicePhoneMobileIcon,
-    features: ['환자 모니터링', '복지정책 연동', 'IoT 연결'],
-  },
-  {
-    id: 5,
-    title: '데이터 분석 대시보드',
-    category: '데이터 분석',
-    description: '빅데이터 분석 및 인사이트 도출 플랫폼',
-    image: '/api/placeholder/400/300',
-    technologies: ['Python', 'Pandas', 'Plotly', 'Streamlit'],
-    icon: ChartBarIcon,
-    features: ['실시간 분석', '예측 모델', '시각화'],
-  },
-  {
-    id: 6,
-    title: '보안 모니터링 시스템',
-    category: '보안',
-    description: '실시간 보안 위협 탐지 및 대응 시스템',
-    image: '/api/placeholder/400/300',
-    technologies: ['Security', 'Machine Learning', 'Python', 'Docker'],
-    icon: ShieldCheckIcon,
-    features: ['실시간 모니터링', '자동 대응', '위협 분석'],
-  },
-  {
-    id: 7,
-    title: 'MXTEN[15] 바이브 코딩 MVP',
-    category: '웹앱',
-    description: '혁신적인 바이브 코딩 기반 MVP 소개 웹앱',
-    image: '/api/placeholder/400/300',
+    title: '바이브 코딩 소개 자료(포트폴리오) 앱',
+    category: '홈페이지/랜딩',
+    description: '혁신적인 바이브 코딩 기반 MVP 소개 및 포트폴리오 웹앱',
+    image: '/images/mvp-project-04.png',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     icon: ComputerDesktopIcon,
     features: ['반응형 디자인', '다국어 지원', '프리미엄 UI/UX'],
-    demoUrl: 'https://baikalsys.kr',
+    demoUrl: 'https://mvp-project-04.vercel.app/',
+  },
+  {
+    id: 2,
+    title: 'KESRI 웹사이트 리뉴얼',
+    category: '홈페이지/랜딩',
+    description: '한국에너지기술연구원 공식 웹사이트 리뉴얼',
+    image: '/images/ketri-project-01.png',
+    technologies: ['Next.js', 'React', 'CMS', 'SEO'],
+    icon: ComputerDesktopIcon,
+    features: ['연구 정보 관리', '공지사항', '반응형 디자인'],
+    demoUrl: 'https://ketri-project-01.vercel.app/',
+  },
+  {
+    id: 3,
+    title: '국회의원 랜딩페이지 MVP',
+    category: '홈페이지/랜딩',
+    description: '국회의원을 위한 정책 홍보 및 소통 랜딩페이지',
+    image: '/images/lawmaker-landing.png',
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'SEO'],
+    icon: ComputerDesktopIcon,
+    features: ['정책 소개', '민원 접수', 'SEO 최적화'],
+    demoUrl: 'https://lawmaker-landing.vercel.app/',
+  },
+  {
+    id: 4,
+    title: '한국코프트 홈페이지',
+    category: '홈페이지/랜딩',
+    description: '기업 소개 및 제품 홍보를 위한 공식 홈페이지',
+    image: '/images/mvp-project-03.png',
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'CMS'],
+    icon: ComputerDesktopIcon,
+    features: ['기업 소개', '제품 카탈로그', '문의 시스템'],
+    demoUrl: 'https://mvp-project-03.vercel.app/',
+  },
+  {
+    id: 5,
+    title: '박신환 행정사 홈페이지',
+    category: '홈페이지/랜딩',
+    description: '행정사 사무소 소개 및 업무 안내 홈페이지',
+    image: '/images/new-project-04.png',
+    technologies: ['Next.js', 'React', 'Tailwind CSS'],
+    icon: ComputerDesktopIcon,
+    features: ['서비스 소개', '상담 예약', '업무 안내'],
+    demoUrl: 'https://new-project-04.vercel.app/',
+  },
+  {
+    id: 6,
+    title: '박영지치과 홈페이지',
+    category: '홈페이지/랜딩',
+    description: '치과 병원 소개 및 진료 안내 홈페이지',
+    image: '/images/new-project-20.png',
+    technologies: ['Next.js', 'React', 'Tailwind CSS'],
+    icon: ComputerDesktopIcon,
+    features: ['진료 안내', '의료진 소개', '오시는 길'],
+    demoUrl: 'https://new-project-20.vercel.app/',
+  },
+  {
+    id: 7,
+    title: '정해 정형외과 의원',
+    category: '홈페이지/랜딩',
+    description: 'AI 증상 체크와 실시간 예약이 가능한 정형외과 홈페이지',
+    image: '/images/new-project-40.png',
+    technologies: ['Next.js', 'React', 'AI', 'Booking System'],
+    icon: ComputerDesktopIcon,
+    features: ['진료 안내', 'AI 증상 체크', '실시간 예약'],
+    demoUrl: 'https://new-project-40.vercel.app/',
+  },
+  {
+    id: 8,
+    title: '만승시스템 홈페이지(버전1)',
+    category: '홈페이지/랜딩',
+    description: 'IT 솔루션 기업 홈페이지 버전1',
+    image: '/images/mvp-project-09.png',
+    technologies: ['Next.js', 'React', 'Tailwind CSS'],
+    icon: ComputerDesktopIcon,
+    features: ['기업 소개', '솔루션 안내', '고객 지원'],
+    demoUrl: 'https://mvp-project-09.vercel.app/',
+  },
+
+  // 공공/복지/교육 (8개)
+  {
+    id: 9,
+    title: '복지서비스 추천 앱',
+    category: '공공/복지',
+    description: '사용자 맞춤형 복지 서비스 추천 플랫폼',
+    image: '/images/mvp-project-20.png',
+    technologies: ['Next.js', 'React', 'AI', 'Recommendation'],
+    icon: ComputerDesktopIcon,
+    features: ['복지 정보', 'AI 추천', '신청 가이드'],
+    demoUrl: 'https://mvp-project-20.vercel.app/',
+  },
+  {
+    id: 10,
+    title: '시니어 복지정보 알림 앱',
+    category: '공공/복지',
+    description: '고령자를 위한 복지 정보 알림 서비스',
+    image: '/images/mvp-project-08.png',
+    technologies: ['Next.js', 'React', 'Push Notification', 'Accessibility'],
+    icon: ComputerDesktopIcon,
+    features: ['맞춤 알림', '큰 글자', '음성 지원'],
+    demoUrl: 'https://mvp-project-08.vercel.app/',
+  },
+  {
+    id: 11,
+    title: '바이칼 재가복지센터 홈페이지',
+    category: '공공/복지',
+    description: '재가복지센터 서비스 안내 및 신청 홈페이지',
+    image: '/images/mvp-project-18.png',
+    technologies: ['Next.js', 'React', 'Booking', 'CMS'],
+    icon: ComputerDesktopIcon,
+    features: ['서비스 소개', '신청 관리', '일정 예약'],
+    demoUrl: 'https://mvp-project-18.vercel.app/',
+  },
+  {
+    id: 12,
+    title: '재가복지센터 통합관리 시스템',
+    category: '공공/복지',
+    description: '복지센터 운영 및 서비스 관리 통합 시스템',
+    image: '/images/caring-plus.png',
+    technologies: ['Next.js', 'React', 'Admin Panel', 'Database'],
+    icon: ShieldCheckIcon,
+    features: ['일정 관리', '서비스 기록', '통계 분석'],
+    demoUrl: 'https://caring-plus.vercel.app/login',
+  },
+  {
+    id: 13,
+    title: 'Baikal Systems Academy',
+    category: '교육/아카데미',
+    description: '바이칼시스템즈 교육 플랫폼 및 강의 관리 시스템',
+    image: '/images/vibe-academy-mvp.png',
+    technologies: ['Next.js', 'React', 'LMS', 'Video Streaming'],
+    icon: ComputerDesktopIcon,
+    features: ['강의 관리', '수강 신청', '진도 추적'],
+    demoUrl: 'https://vibe-academy-mvp.vercel.app/',
+  },
+  {
+    id: 14,
+    title: '시기반 맞춤형 교육 플랫폼',
+    category: '교육/AI',
+    description: 'AI 기반 개인 맞춤형 교육 콘텐츠 추천 플랫폼',
+    image: '/images/jdx-project-01.png',
+    technologies: ['Next.js', 'React', 'AI/ML', 'Adaptive Learning'],
+    icon: CpuChipIcon,
+    features: ['AI 추천', '학습 분석', '진도 관리'],
+    demoUrl: 'https://jdx-project-01.vercel.app/',
+  },
+  {
+    id: 15,
+    title: '직장인을 위한 AI 교육 플랫폼',
+    category: '교육/AI',
+    description: '직장인 역량 강화를 위한 AI 맞춤 교육 서비스',
+    image: '/images/jdx-project-02.png',
+    technologies: ['Next.js', 'React', 'AI', 'Career Development'],
+    icon: CpuChipIcon,
+    features: ['역량 진단', 'AI 커리큘럼', '학습 추적'],
+    demoUrl: 'https://jdx-project-02.vercel.app/',
+  },
+  {
+    id: 16,
+    title: '시군구 RPA 통합 플랫폼 앱',
+    category: '공공/RPA',
+    description: '지방자치단체 업무 자동화 RPA 통합 플랫폼',
+    image: '/images/mvp-project-14.png',
+    technologies: ['Next.js', 'React', 'RPA', 'Automation'],
+    icon: CpuChipIcon,
+    features: ['업무 자동화', 'RPA 관리', '프로세스 최적화'],
+    demoUrl: 'https://mvp-project-14.vercel.app/',
+  },
+
+  // 콘텐츠/크리에이티브 (8개)
+  {
+    id: 17,
+    title: 'VibeRadar 트렌드 레이더',
+    category: '콘텐츠/트렌드',
+    description: '실시간 트렌드 분석 및 모니터링 플랫폼',
+    image: '/images/grok-project-01.png',
+    technologies: ['Next.js', 'React', 'Data Analytics', 'Visualization'],
+    icon: ChartBarIcon,
+    features: ['트렌드 분석', '실시간 모니터링', '리포트 생성'],
+    demoUrl: 'https://grok-project-01.vercel.app/',
+  },
+  {
+    id: 18,
+    title: 'AI 작사·작곡 도우미 플랫폼',
+    category: '콘텐츠/크리에이티브',
+    description: 'AI 기반 음악 창작 지원 플랫폼',
+    image: '/images/music-project-01.png',
+    technologies: ['Next.js', 'React', 'AI', 'Music Generation'],
+    icon: CpuChipIcon,
+    features: ['AI 작사', 'AI 작곡', '멜로디 생성'],
+    demoUrl: 'https://music-project-01.vercel.app/',
+  },
+  {
+    id: 19,
+    title: '게임컬렉션(grok)',
+    category: '콘텐츠/게임',
+    description: '다양한 브라우저 게임 컬렉션 플랫폼',
+    image: '/images/grok-project-21.png',
+    technologies: ['Next.js', 'React', 'Game Engine', 'Canvas'],
+    icon: ComputerDesktopIcon,
+    features: ['게임 라이브러리', '점수 기록', '멀티플레이'],
+    demoUrl: 'https://grok-project-21.vercel.app/',
+  },
+  {
+    id: 20,
+    title: '프리미엄 문학 플랫폼',
+    category: '콘텐츠/문학',
+    description: '작가와 독자를 연결하는 문학 플랫폼',
+    image: '/images/baikal-project-01.png',
+    technologies: ['Next.js', 'React', 'CMS', 'Community'],
+    icon: ComputerDesktopIcon,
+    features: ['작품 발표', '커뮤니티', '구독 서비스'],
+    demoUrl: 'https://baikal-project-01.vercel.app/',
+  },
+  {
+    id: 21,
+    title: '세대소통 AI 플랫폼 Generation Bridge',
+    category: '커뮤니티/세대',
+    description: 'AI 기반 세대 간 소통 지원 플랫폼',
+    image: '/images/jdx-project-70.png',
+    technologies: ['Next.js', 'React', 'AI', 'Social'],
+    icon: ComputerDesktopIcon,
+    features: ['AI 번역', '커뮤니티', '세대 연결'],
+    demoUrl: 'https://jdx-project-70.vercel.app/',
+  },
+  {
+    id: 22,
+    title: '약 복용관리 플랫폼',
+    category: '헬스/생활',
+    description: '스마트 약 복용 알림 및 관리 서비스',
+    image: '/images/mvp-project-10.png',
+    technologies: ['Next.js', 'React', 'Push Notification', 'Health'],
+    icon: ComputerDesktopIcon,
+    features: ['복용 알림', '약 정보', '복용 기록'],
+    demoUrl: 'https://mvp-project-10.vercel.app/',
+  },
+  {
+    id: 23,
+    title: 'QR 경매(grok)',
+    category: '경매/거래',
+    description: 'QR 코드 기반 실시간 경매 플랫폼',
+    image: '/images/grok-project-23.png',
+    technologies: ['Next.js', 'React', 'QR', 'Real-time Bidding'],
+    icon: ComputerDesktopIcon,
+    features: ['QR 입찰', '실시간 경매', '거래 관리'],
+    demoUrl: 'https://grok-project-23.vercel.app/',
+  },
+  {
+    id: 24,
+    title: 'FIGMA 코드 변환 플랫폼',
+    category: 'FIGMA/코드변환',
+    description: 'Figma 디자인을 React 코드로 자동 변환',
+    image: '/images/figma-project-01.png',
+    technologies: ['Next.js', 'React', 'Figma API', 'Code Generation'],
+    icon: CpuChipIcon,
+    features: ['자동 변환', '컴포넌트 생성', '스타일 최적화'],
+    demoUrl: 'https://figma-project-01.vercel.app/',
+  },
+
+  // 업무/산업/도구 (8개)
+  {
+    id: 25,
+    title: 'AI 증창년 일자리 플랫폼',
+    category: '일자리/매칭',
+    description: 'AI 기반 중장년층 일자리 매칭 플랫폼',
+    image: '/images/mvp-project-06.png',
+    technologies: ['Next.js', 'React', 'AI Matching', 'Job Platform'],
+    icon: ComputerDesktopIcon,
+    features: ['AI 매칭', '이력서 관리', '채용 정보'],
+    demoUrl: 'https://mvp-project-06.vercel.app/',
+  },
+  {
+    id: 26,
+    title: '신조어 번역 웹앱(ZLang Decoder)',
+    category: '유틸/도구',
+    description: '최신 신조어 및 은어 번역 서비스',
+    image: '/images/jdx-project-60.png',
+    technologies: ['Next.js', 'React', 'NLP', 'Dictionary'],
+    icon: ComputerDesktopIcon,
+    features: ['신조어 검색', '실시간 번역', '용어 학습'],
+    demoUrl: 'https://jdx-project-60.vercel.app/',
+  },
+  {
+    id: 27,
+    title: '프롬프트 자판기',
+    category: '유틸/도구',
+    description: 'AI 프롬프트 템플릿 라이브러리 및 생성 도구',
+    image: '/images/baikal-project-10.png',
+    technologies: ['Next.js', 'React', 'AI', 'Template Engine'],
+    icon: CpuChipIcon,
+    features: ['프롬프트 생성', '템플릿 관리', 'AI 최적화'],
+    demoUrl: 'https://baikal-project-10.vercel.app/',
+  },
+  {
+    id: 28,
+    title: 'Vibe Office Hub',
+    category: '업무/SaaS(Hub)',
+    description: '통합 업무 협업 및 프로젝트 관리 허브',
+    image: '/images/gen-project-01.png',
+    technologies: ['Next.js', 'React', 'Collaboration', 'Project Management'],
+    icon: ComputerDesktopIcon,
+    features: ['프로젝트 관리', '팀 협업', '문서 공유'],
+    demoUrl: 'https://gen-project-01.vercel.app/',
+  },
+  {
+    id: 29,
+    title: 'Vibe Finance Hub',
+    category: '업무/SaaS(Hub)',
+    description: '재무 관리 및 회계 통합 시스템',
+    image: '/images/gen-project-02.png',
+    technologies: ['Next.js', 'React', 'Finance', 'Accounting'],
+    icon: ChartBarIcon,
+    features: ['재무 관리', '회계 처리', '리포트 생성'],
+    demoUrl: 'https://gen-project-02.vercel.app/',
+  },
+  {
+    id: 30,
+    title: 'MES WorkFlow Hub',
+    category: '산업/MES',
+    description: '제조 실행 시스템 워크플로우 관리',
+    image: '/images/gen-project-04.png',
+    technologies: ['Next.js', 'React', 'MES', 'IoT'],
+    icon: CpuChipIcon,
+    features: ['공정 관리', '설비 모니터링', '품질 관리'],
+    demoUrl: 'https://gen-project-04.vercel.app/',
+  },
+  {
+    id: 31,
+    title: 'VIBE CODING 브랜딩 MVP Universe',
+    category: '브랜딩/쇼케이스',
+    description: '바이브 코딩 브랜드 통합 쇼케이스 플랫폼',
+    image: '/images/jdx-project-50.png',
+    technologies: ['Next.js', 'React', '3D', 'Animation'],
+    icon: ComputerDesktopIcon,
+    features: ['브랜드 소개', '프로젝트 쇼케이스', '인터랙티브 UI'],
+    demoUrl: 'https://jdx-project-50.vercel.app/',
+  },
+  {
+    id: 32,
+    title: '연차 관리 시스템',
+    category: 'HR/근태',
+    description: '직원 연차 신청 및 관리 시스템',
+    image: '/images/grok-project-74.png',
+    technologies: ['Next.js', 'React', 'Calendar', 'Workflow'],
+    icon: ShieldCheckIcon,
+    features: ['연차 신청', '승인 관리', '일정 조회'],
+    demoUrl: 'https://grok-project-74.vercel.app/',
   },
 ];
 
-const categories = ['전체', '헬스케어', 'RPA', '공공데이터', '모바일', '데이터 분석', '보안', '웹앱'];
+const categories = ['전체', '홈페이지/랜딩', '공공/복지', '교육/AI', '콘텐츠/크리에이티브', '업무/산업', '유틸/도구', '브랜딩/쇼케이스'];
 
 export default function PortfolioSection() {
   const { t } = useLanguage();
@@ -110,11 +416,50 @@ export default function PortfolioSection() {
     threshold: 0.1,
   });
 
+  const [portfolioData, setPortfolioData] = useState<PortfolioItemWithIcon[]>([]);
+  const [categories, setCategories] = useState<string[]>(['전체']);
   const [selectedCategory, setSelectedCategory] = useState('전체');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
 
+  // JSON 데이터 로드
+  useEffect(() => {
+    fetch('/data/portfolio.json')
+      .then(res => res.json())
+      .then(data => {
+        const itemsWithIcons = data.portfolioItems.map((item: PortfolioItem) => ({
+          ...item,
+          icon: getIconForCategory(item.category)
+        }));
+        setPortfolioData(itemsWithIcons);
+        setCategories(data.categories || ['전체']);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('포트폴리오 데이터 로드 실패:', error);
+        setLoading(false);
+      });
+  }, []);
+
+  // 필터링 및 페이지네이션
   const filteredItems = selectedCategory === '전체' 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.category === selectedCategory);
+    ? portfolioData 
+    : portfolioData.filter(item => item.category === selectedCategory);
+
+  const totalPages = Math.ceil(filteredItems.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const paginatedItems = filteredItems.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  // 카테고리 변경 시 첫 페이지로
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory]);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    // 스크롤을 포트폴리오 섹션 상단으로
+    document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <section id="portfolio" className="relative py-16 sm:py-24 md:py-32 bg-gradient-to-b from-gray-50 to-white dark:from-zinc-800 dark:to-zinc-900 overflow-hidden">
@@ -187,8 +532,14 @@ export default function PortfolioSection() {
         {/* Premium Portfolio Grid */}
         <AnimatedElement animation="scaleIn" duration={1} delay={0.6}>
           <div className="mx-auto mt-16 sm:mt-20 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 xs:gap-10 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            <AnimatePresence mode="wait">
-              {filteredItems.map((item, index) => (
+            {loading ? (
+              <div className="col-span-3 text-center py-12">
+                <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
+                <p className="mt-4 text-gray-600 dark:text-gray-400">프로젝트를 불러오는 중...</p>
+              </div>
+            ) : (
+              <AnimatePresence mode="wait">
+                {paginatedItems.map((item, index) => (
                 <motion.article
                   key={`${selectedCategory}-${item.id}`}
                   initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -324,7 +675,69 @@ export default function PortfolioSection() {
               </motion.article>
             ))}
             </AnimatePresence>
+            )}
           </div>
+
+          {/* 페이지네이션 */}
+          {!loading && totalPages > 1 && (
+            <div className="mt-12 sm:mt-16 flex items-center justify-center gap-2 sm:gap-4">
+              {/* 이전 버튼 */}
+              <button
+                onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
+                disabled={currentPage === 1}
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-lg hover:bg-gray-50 dark:hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                <ChevronLeftIcon className="h-5 w-5 mr-1" />
+                이전
+              </button>
+
+              {/* 페이지 번호 */}
+              <div className="flex gap-2">
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => {
+                  // 현재 페이지 주변만 표시
+                  if (
+                    page === 1 ||
+                    page === totalPages ||
+                    (page >= currentPage - 1 && page <= currentPage + 1)
+                  ) {
+                    return (
+                      <button
+                        key={page}
+                        onClick={() => handlePageChange(page)}
+                        className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+                          currentPage === page
+                            ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
+                            : 'text-gray-700 dark:text-gray-300 bg-white dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 hover:bg-gray-50 dark:hover:bg-zinc-700'
+                        }`}
+                      >
+                        {page}
+                      </button>
+                    );
+                  } else if (page === currentPage - 2 || page === currentPage + 2) {
+                    return <span key={page} className="px-2 py-2 text-gray-400">...</span>;
+                  }
+                  return null;
+                })}
+              </div>
+
+              {/* 다음 버튼 */}
+              <button
+                onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
+                disabled={currentPage === totalPages}
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-lg hover:bg-gray-50 dark:hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                다음
+                <ChevronRightIcon className="h-5 w-5 ml-1" />
+              </button>
+            </div>
+          )}
+
+          {/* 프로젝트 카운트 */}
+          {!loading && (
+            <p className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
+              전체 {filteredItems.length}개 프로젝트 중 {startIndex + 1}-{Math.min(startIndex + ITEMS_PER_PAGE, filteredItems.length)}개 표시
+            </p>
+          )}
         </AnimatedElement>
 
         {/* Premium CTA */}

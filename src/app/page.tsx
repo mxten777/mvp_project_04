@@ -21,7 +21,9 @@ export default function Home() {
         <section id="home">
           <HeroSection />
         </section>
-        <ServicesSection />
+        <section id="services">
+          <ServicesSection />
+        </section>
         <section id="about">
           <AboutSection />
         </section>
