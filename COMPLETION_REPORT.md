@@ -1,6 +1,6 @@
 # 🎉 MVP Project 04 - Phase 3 완료 및 다국어 지원 구현
 
-## 📅 완료 날짜: 2025년 10월 8일
+## 📅 완료 날짜: 2026년 2월 4일
 
 ## 🚀 주요 완성 기능
 
@@ -68,7 +68,19 @@
 ### 접속 정보
 - 🌐 **개발 서버**: http://localhost:3001
 - 📡 **네트워크**: http://192.168.45.120:3001
+- 🚀 **프로덕션 배포**: https://mvp-project-04-j3c8nmebp-dongyeol-jungs-projects.vercel.app
+- 🔗 **바이브 코딩 포트폴리오**: https://mxten-project-15.vercel.app/
 - ⚡ **상태**: Ready (3.7초 시작)
+
+## 🎨 최근 업데이트
+
+### 2026년 2월 4일 - 로고 리디자인
+- 🎨 **브랜드 아이덴티티 개선**: Baikal Systems 로고 리디자인 완료
+- 🖼️ **새 로고 파일**: 
+  - `baikal_logo.png` - 메인 컬러 로고
+  - `baikal_logo_white.png` - 다크모드용 화이트 로고
+  - `baikal_logo_trans.png` - 투명 배경 로고
+- 📦 **이전 버전 보관**: old 버전 파일로 백업 완료
 
 ## 🔮 향후 개선 계획
 

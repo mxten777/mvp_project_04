@@ -56,23 +56,20 @@ export default function Header() {
             <Link href="#home" className="flex items-center">
               <div className="flex items-center space-x-2">
                 <div className="flex items-center justify-center">
-                  {/* 동그란 로고 */}
-                  <div
-                    className="rounded-full overflow-hidden shadow-lg border-2 border-blue-400 bg-white flex items-center justify-center"
-                    style={{ width: 48, height: 48 }}
-                  >
+                  {/* 로고 */}
+                  <div className="relative px-1.5 py-0.5 bg-white/95 backdrop-blur-sm rounded shadow-md">
                     <Image
                       src="/images/baikal_logo.png"
                       alt="바이칼시스템즈 로고"
-                      width={44}
-                      height={44}
+                      width={90}
+                      height={28}
                       className="object-contain"
                       priority
                     />
                   </div>
                 </div>
                 <span
-                  className="ml-2 text-lg font-extrabold tracking-tight text-white whitespace-nowrap hidden md:inline-block drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
+                  className="ml-1 text-sm font-bold tracking-tight text-white whitespace-nowrap hidden lg:inline-block drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
                   style={{ letterSpacing: '0.01em' }}
                 >
                   (주)바이칼시스템즈
