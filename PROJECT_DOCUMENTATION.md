@@ -9,7 +9,7 @@
 AI와 RPA 기술로 미래를 코딩하는 차세대 혁신 파트너를 소개하는 모던한 IT 랜딩페이지
 
 ### 배포 정보
-- **Production URL**: https://mvp-project-04-g6kv7lxv5-dongyeol-jungs-projects.vercel.app
+- **Production URL**: https://mxten-project-15.vercel.app/
 - **Development**: http://localhost:3000
 - **Repository**: https://github.com/mxten777/mvp_project_04
 

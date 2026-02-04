@@ -117,7 +117,7 @@ vercel --prod
 ```
 
 ### 현재 배포 URL
-- **Production**: https://mvp-project-04-g6kv7lxv5-dongyeol-jungs-projects.vercel.app
+- **Production**: https://mxten-project-15.vercel.app/
 
 ## 🔄 개발 워크플로우
 
