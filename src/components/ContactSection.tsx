@@ -208,7 +208,8 @@ export default function ContactSection() {
                   </div>
                   <div className="ml-4">
                     <p className="font-ui font-semibold text-sm sm:text-base text-gray-900 dark:text-white mb-1 tracking-normal">이메일</p>
-                    <p className="font-ui text-xs sm:text-sm text-gray-600 dark:text-gray-300">mxten777@gmail.com</p>
+                    <p className="font-ui text-xs sm:text-sm text-gray-600 dark:text-gray-300">jngdy@naver.com</p>
+                    <p className="font-ui text-xs sm:text-sm text-gray-600 dark:text-gray-300">jngdy@baikalsys.kr</p>
                   </div>
                 </motion.div>
 

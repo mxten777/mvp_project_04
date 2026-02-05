@@ -57,13 +57,13 @@ export default function Header() {
               <div className="flex items-center space-x-2">
                 <div className="flex items-center justify-center">
                   {/* 로고 */}
-                  <div className="relative px-1.5 py-0.5 bg-white/95 backdrop-blur-sm rounded shadow-md">
+                  <div className="relative">
                     <Image
-                      src="/images/baikal_logo.png"
+                      src="/images/baikal_logo_white.png"
                       alt="바이칼시스템즈 로고"
-                      width={90}
-                      height={28}
-                      className="object-contain"
+                      width={70}
+                      height={22}
+                      className="object-contain drop-shadow-lg"
                       priority
                     />
                   </div>
@@ -141,8 +141,17 @@ export default function Header() {
           >
             <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
-                <Link href="#home" className="-m-1.5 p-1.5">
-                  <span className="text-xl font-bold text-gray-900">바이칼시스템즈</span>
+                <Link href="#home" className="-m-1.5 p-1.5 flex items-center gap-2">
+                  <div className="relative">
+                    <Image
+                      src="/images/baikal_logo.png"
+                      alt="바이칼시스템즈 로고"
+                      width={70}
+                      height={22}
+                      className="object-contain"
+                    />
+                  </div>
+                  <span className="text-base font-bold text-gray-900">(주)바이칼시스템즈</span>
                 </Link>
                 <button
                   type="button"

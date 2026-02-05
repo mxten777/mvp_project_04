@@ -37,7 +37,8 @@ export default function Footer() {
             <p className="text-xs text-gray-300">AI와 RPA 기술로 미래를 코딩하는 디지털 혁신 파트너</p>
             <div className="text-xs text-gray-300 space-y-1">
               <p>📞 010-2380-4691</p>
-              <p>✉️ mxten777@gmail.com</p>
+              <p>✉️ jngdy@naver.com</p>
+              <p>✉️ jngdy@baikalsys.kr</p>
               <p>📍 서울특별시 강남구 역삼로 138</p>
             </div>
           </div>
