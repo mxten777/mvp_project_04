@@ -48,7 +48,7 @@
   --surface-primary: #ffffff;
   --surface-secondary: #f9fafb;
   --surface-tertiary: #f3f4f6;
-  --surface-elevated: rgba(255, 255, 255, 0.8);
+  --surface-elevated: rgba(255, 255, 255, 0.95);
   --surface-glass: rgba(255, 255, 255, 0.6);
   --surface-overlay: rgba(0, 0, 0, 0.4);
 
@@ -118,7 +118,7 @@
     --surface-primary: #09090b;
     --surface-secondary: #18181b;
     --surface-tertiary: #27272a;
-    --surface-elevated: rgba(24, 24, 27, 0.8);
+    --surface-elevated: rgba(24, 24, 27, 0.95);
     --surface-glass: rgba(24, 24, 27, 0.6);
     --surface-overlay: rgba(0, 0, 0, 0.6);
     --border-subtle: rgba(255, 255, 255, 0.06);
