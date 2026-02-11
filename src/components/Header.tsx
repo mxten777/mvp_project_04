@@ -66,8 +66,8 @@ export default function Header() {
       <motion.header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-gray-950/95 backdrop-blur-xl shadow-lg border-b border-white/5'
-            : 'bg-gray-950/70 backdrop-blur-md'
+            ? 'bg-gray-950 backdrop-blur-xl shadow-2xl shadow-black/50 border-b border-white/10'
+            : 'bg-gray-950/80 backdrop-blur-md'
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -90,15 +90,11 @@ export default function Header() {
                   alt="바이칼시스템즈 로고"
                   width={70}
                   height={22}
-                  className={`object-contain transition-all duration-500 ${
-                    scrolled ? 'brightness-0 dark:brightness-100 invert dark:invert-0' : 'brightness-100'
-                  }`}
+                  className="object-contain brightness-100"
                   priority
                 />
               </div>
-              <span className={`text-sm font-bold tracking-tight whitespace-nowrap hidden lg:inline-block transition-colors duration-500 ${
-                scrolled ? 'text-gray-900 dark:text-white' : 'text-white'
-              }`}>
+              <span className="text-sm font-bold tracking-tight whitespace-nowrap hidden lg:inline-block text-white">
                 (주)바이칼시스템즈
               </span>
             </Link>
@@ -108,9 +104,7 @@ export default function Header() {
           <div className="flex lg:hidden">
             <button
               type="button"
-              className={`p-2.5 rounded-xl transition-colors ${
-                scrolled ? 'text-gray-700 dark:text-gray-300' : 'text-white'
-              }`}
+              className="p-2.5 rounded-xl text-white transition-colors hover:text-indigo-300"
               onClick={() => setMobileMenuOpen(true)}
             >
               <Bars3Icon className="h-6 w-6" />
@@ -131,22 +125,14 @@ export default function Header() {
                   onClick={(e) => handleNavClick(e, item.href)}
                   className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 cursor-pointer ${
                     activeSection === item.id
-                      ? scrolled
-                        ? 'text-indigo-600 dark:text-indigo-400'
-                        : 'text-white'
-                      : scrolled
-                        ? 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-                        : 'text-white/70 hover:text-white'
+                      ? 'text-white'
+                      : 'text-white/60 hover:text-white'
                   }`}
                 >
                   {item.name}
                   {activeSection === item.id && (
                     <motion.div
-                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] rounded-full ${
-                        scrolled
-                          ? 'bg-gradient-to-r from-indigo-500 to-purple-500'
-                          : 'bg-white'
-                      }`}
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] rounded-full bg-gradient-to-r from-indigo-400 to-purple-400"
                       layoutId="activeNav"
                       style={{ width: '60%' }}
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
