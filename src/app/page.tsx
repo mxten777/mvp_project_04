@@ -13,40 +13,46 @@ import AnalyticsDashboard from '@/components/AnalyticsDashboard';
 import PWAInstallPrompt from '@/components/PWAInstallPrompt';
 import { PerformanceDashboard } from '@/lib/monitoring';
 
+function SectionDivider() {
+  return (
+    <div className="section-divider" aria-hidden="true" />
+  );
+}
+
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-950">
+      <ScrollProgress />
       <Header />
       <main>
         <section id="home">
           <HeroSection />
         </section>
+        <SectionDivider />
         <section id="services">
           <ServicesSection />
         </section>
+        <SectionDivider />
         <section id="about">
           <AboutSection />
         </section>
+        <SectionDivider />
         <section id="portfolio">
           <PortfolioSection />
         </section>
+        <SectionDivider />
         <section id="contact">
           <ContactSection />
         </section>
       </main>
       <Footer />
-      
-      {/* Phase 1 & 2.1 Components */}
-      <ScrollProgress />
+
+      {/* Overlay UI */}
       <ThemeToggle />
       <ChatBot />
-      
-      {/* Phase 2.2 Components */}
       <AdvancedSearch />
       <AnalyticsDashboard />
       <PWAInstallPrompt />
-      
-      {/* Phase 3 Components - Security & Monitoring */}
       <PerformanceDashboard />
     </div>
   );

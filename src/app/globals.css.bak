@@ -1,0 +1,221 @@
+/* 최고급 폰트 시스템 - Tailwind 3.4.0 최적화 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 스무스 스크롤 - 빠른 반응성 */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* 헤더 높이 + 여백 */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* 스크롤바 스타일링 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.mb-8 { margin-bottom: 2rem; }
+
+.font-bold { font-weight: 700; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* 헤더 높이 + 여백 */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 커스텀 스크롤바 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
+
+/* 텍스트 선택 색상 */
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+/* 링크 호버 효과 */
+a {
+  transition: all 0.2s ease-in-out;
+}
+
+/* 버튼 호버 효과 */
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* 포커스 링 스타일 */
+.focus\:ring-blue-500:focus {
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+}
+
+/* 애니메이션 지연 최적화 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* KETRI UI Standard v1.0 - Freeze scaffolding and Figma token placeholders
+   - Do NOT change KETRI layout behavior here.
+   - Replace the --figma-* values with exact Figma token values when available.
+*/
+:root {
+  /* KETRI required header height variable (placeholder) */
+  --app-header-h: 64px;
+
+  /* Figma visual token placeholders (fill from Figma) */
+  --figma-primary-500: #2563eb;
+  --figma-neutral-100: #f5f5f5;
+  --figma-neutral-500: #6b7280;
+  --figma-neutral-900: #111827;
+  --figma-bg: var(--background);
+  --figma-border: #e5e7eb;
+  --figma-text: var(--foreground);
+
+  /* Spacing tokens */
+  --figma-space-4: 4px;
+  --figma-space-8: 8px;
+  --figma-space-12: 12px;
+  --figma-space-16: 16px;
+  --figma-space-24: 24px;
+  --figma-space-32: 32px;
+
+  /* Radius tokens */
+  --figma-radius-card: 12px;
+  --figma-radius-button: 9999px;
+}
+
+/* KETRI structural rules (anchor safety / hero handling) - preserve these rules */
+[data-has-hero] { padding-top: var(--app-header-h); }
+[data-hero-bleed] { margin-top: calc(var(--app-header-h) * -1); }
+:target { scroll-margin-top: var(--app-header-h); }
+
+/* KETRI required header inner height (do not change behavior) */
+.app-header-inner {
+  height: var(--app-header-h);
+  display: flex;
+  align-items: center;
+}

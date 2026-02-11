@@ -1,192 +1,99 @@
-/* 최고급 폰트 시스템 - Tailwind 3.4.0 최적화 */
+/* ============================================================
+   BAIKAL SYSTEMS - Premium Design System v3.0
+   Enterprise-Grade CSS Architecture (2026)
+   ============================================================ */
+
+/* Premium Font Imports */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   1. CSS CUSTOM PROPERTIES - Premium Design Tokens
+   ============================================================ */
 :root {
+  /* Core Colors */
   --background: #ffffff;
-  --foreground: #171717;
-}
+  --foreground: #0a0a0a;
+  
+  /* Premium Brand Palette */
+  --premium-blue: #2563eb;
+  --premium-indigo: #4f46e5;
+  --premium-purple: #7c3aed;
+  --premium-pink: #ec4899;
+  --premium-cyan: #06b6d4;
+  --premium-emerald: #10b981;
+  
+  /* Neutral Scale */
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
+  --neutral-950: #0a0a0a;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  /* Surface & Elevation */
+  --surface-primary: #ffffff;
+  --surface-secondary: #f9fafb;
+  --surface-tertiary: #f3f4f6;
+  --surface-elevated: rgba(255, 255, 255, 0.8);
+  --surface-glass: rgba(255, 255, 255, 0.6);
+  --surface-overlay: rgba(0, 0, 0, 0.4);
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+  /* Border */
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-default: rgba(0, 0, 0, 0.1);
+  --border-strong: rgba(0, 0, 0, 0.15);
+  
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 40px rgba(79, 70, 229, 0.15);
+  --shadow-glow-lg: 0 0 60px rgba(79, 70, 229, 0.2);
+  
+  /* Animation */
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 700ms;
+  
+  /* Layout */
+  --app-header-h: 72px;
+  --section-gap: 120px;
+  --container-max: 1280px;
+  --content-max: 720px;
+  
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+  
+  /* Noise texture */
+  --noise-opacity: 0.025;
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* 스무스 스크롤 - 빠른 반응성 */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* 헤더 높이 + 여백 */
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* 스크롤바 스타일링 */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-.mb-8 { margin-bottom: 2rem; }
-
-.font-bold { font-weight: 700; }
-.text-xl { font-size: 1.25rem; }
-.text-2xl { font-size: 1.5rem; }
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* 헤더 높이 + 여백 */
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* 커스텀 스크롤바 */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #2563eb;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #1d4ed8;
-}
-
-/* 텍스트 선택 색상 */
-::selection {
-  background: #2563eb;
-  color: white;
-}
-
-/* 링크 호버 효과 */
-a {
-  transition: all 0.2s ease-in-out;
-}
-
-/* 버튼 호버 효과 */
-button {
-  transition: all 0.2s ease-in-out;
-}
-
-/* 포커스 링 스타일 */
-.focus\:ring-blue-500:focus {
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-}
-
-/* 애니메이션 지연 최적화 */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* KETRI UI Standard v1.0 - Freeze scaffolding and Figma token placeholders
-   - Do NOT change KETRI layout behavior here.
-   - Replace the --figma-* values with exact Figma token values when available.
-*/
-:root {
-  /* KETRI required header height variable (placeholder) */
-  --app-header-h: 64px;
-
-  /* Figma visual token placeholders (fill from Figma) */
+  /* Figma token placeholders */
   --figma-primary-500: #2563eb;
   --figma-neutral-100: #f5f5f5;
   --figma-neutral-500: #6b7280;
@@ -194,28 +101,502 @@ button {
   --figma-bg: var(--background);
   --figma-border: #e5e7eb;
   --figma-text: var(--foreground);
-
-  /* Spacing tokens */
   --figma-space-4: 4px;
   --figma-space-8: 8px;
   --figma-space-12: 12px;
   --figma-space-16: 16px;
   --figma-space-24: 24px;
   --figma-space-32: 32px;
-
-  /* Radius tokens */
   --figma-radius-card: 12px;
   --figma-radius-button: 9999px;
 }
 
-/* KETRI structural rules (anchor safety / hero handling) - preserve these rules */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #09090b;
+    --foreground: #fafafa;
+    --surface-primary: #09090b;
+    --surface-secondary: #18181b;
+    --surface-tertiary: #27272a;
+    --surface-elevated: rgba(24, 24, 27, 0.8);
+    --surface-glass: rgba(24, 24, 27, 0.6);
+    --surface-overlay: rgba(0, 0, 0, 0.6);
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-default: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.15);
+    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.2);
+    --shadow-glow-lg: 0 0 60px rgba(99, 102, 241, 0.25);
+    --noise-opacity: 0.015;
+  }
+}
+
+/* ============================================================
+   2. BASE STYLES
+   ============================================================ */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--app-header-h) + 20px);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), 'Pretendard Variable', 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Premium Noise/Grain Texture Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: var(--noise-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--duration-normal) var(--ease-smooth);
+}
+
+button {
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+/* ============================================================
+   3. PREMIUM SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--premium-indigo), var(--premium-purple));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--premium-blue), var(--premium-pink));
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--premium-indigo) transparent;
+}
+
+/* ============================================================
+   4. TEXT SELECTION
+   ============================================================ */
+::selection {
+  background: rgba(79, 70, 229, 0.2);
+  color: var(--foreground);
+}
+
+.dark ::selection {
+  background: rgba(129, 140, 248, 0.3);
+}
+
+/* ============================================================
+   5. PREMIUM SECTION DIVIDERS
+   ============================================================ */
+.section-divider {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, var(--premium-indigo), var(--premium-purple), var(--premium-pink), transparent);
+  opacity: 0.3;
+}
+
+.section-divider::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, var(--premium-indigo), var(--premium-purple));
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.5);
+}
+
+/* ============================================================
+   6. PREMIUM AURORA BACKGROUND EFFECTS
+   ============================================================ */
+.aurora-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.aurora-bg::before {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: -25%;
+  left: -25%;
+  background: 
+    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(79, 70, 229, 0.08), transparent),
+    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(124, 58, 237, 0.06), transparent),
+    radial-gradient(ellipse 70% 50% at 50% 80%, rgba(236, 72, 153, 0.05), transparent);
+  animation: aurora-shift 20s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes aurora-shift {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(2%, -3%) rotate(1deg); }
+  66% { transform: translate(-2%, 2%) rotate(-1deg); }
+  100% { transform: translate(1%, -1%) rotate(0.5deg); }
+}
+
+/* ============================================================
+   7. PREMIUM GLASS MORPHISM UTILITIES
+   ============================================================ */
+.glass-panel {
+  background: var(--surface-glass);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-panel-strong {
+  background: var(--surface-elevated);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid var(--border-default);
+}
+
+/* ============================================================
+   8. PREMIUM GRADIENT TEXT UTILITIES
+   ============================================================ */
+.gradient-text-primary {
+  background: linear-gradient(135deg, var(--premium-blue), var(--premium-indigo), var(--premium-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, var(--premium-purple), var(--premium-pink), #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-cool {
+  background: linear-gradient(135deg, var(--premium-cyan), var(--premium-blue), var(--premium-indigo));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   9. PREMIUM BUTTON STYLES
+   ============================================================ */
+.btn-premium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-lg);
+  transition: all var(--duration-normal) var(--ease-premium);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.6s var(--ease-premium);
+}
+
+.btn-premium:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--premium-indigo), var(--premium-purple));
+  color: white;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border-default);
+  backdrop-filter: blur(10px);
+}
+
+.btn-ghost:hover {
+  background: var(--surface-glass);
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   10. PREMIUM CARD STYLES
+   ============================================================ */
+.card-premium {
+  position: relative;
+  background: var(--surface-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--duration-slow) var(--ease-premium);
+}
+
+.card-premium:hover {
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+.card-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.03), rgba(124, 58, 237, 0.02), transparent);
+  opacity: 0;
+  transition: opacity var(--duration-slow) var(--ease-premium);
+}
+
+.card-premium:hover::before {
+  opacity: 1;
+}
+
+/* ============================================================
+   11. PREMIUM MARQUEE / INFINITE SCROLL
+   ============================================================ */
+.marquee-container {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-content {
+  display: flex;
+  gap: 3rem;
+  animation: marquee 30s linear infinite;
+  white-space: nowrap;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   12. PREMIUM SECTION LABEL
+   ============================================================ */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--premium-indigo);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(79, 70, 229, 0.08);
+  border: 1px solid rgba(79, 70, 229, 0.15);
+}
+
+.dark .section-label {
+  background: rgba(129, 140, 248, 0.1);
+  border-color: rgba(129, 140, 248, 0.2);
+  color: #818cf8;
+}
+
+.section-label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* ============================================================
+   13. PREMIUM ANIMATED GRADIENT BORDER
+   ============================================================ */
+.gradient-border {
+  position: relative;
+  border-radius: var(--radius-xl);
+  padding: 1px;
+  background: linear-gradient(135deg, var(--premium-indigo), var(--premium-purple), var(--premium-pink));
+  background-size: 200% 200%;
+  animation: gradient-rotate 6s ease infinite;
+}
+
+.gradient-border > * {
+  border-radius: calc(var(--radius-xl) - 1px);
+}
+
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================================================
+   14. PREMIUM FORM ELEMENTS
+   ============================================================ */
+.input-premium {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  background: var(--surface-primary);
+  color: var(--foreground);
+  font-size: 0.9375rem;
+  transition: all var(--duration-normal) var(--ease-premium);
+  outline: none;
+}
+
+.input-premium:hover {
+  border-color: var(--border-strong);
+}
+
+.input-premium:focus {
+  border-color: var(--premium-indigo);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.input-premium::placeholder {
+  color: var(--neutral-400);
+}
+
+/* ============================================================
+   15. PREMIUM MESH GRADIENT
+   ============================================================ */
+.mesh-gradient {
+  background: 
+    radial-gradient(at 20% 80%, rgba(79, 70, 229, 0.3) 0px, transparent 50%),
+    radial-gradient(at 80% 20%, rgba(124, 58, 237, 0.25) 0px, transparent 50%),
+    radial-gradient(at 40% 40%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, rgba(236, 72, 153, 0.2) 0px, transparent 50%),
+    linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0c0a25 100%);
+}
+
+/* ============================================================
+   16. PREMIUM SHIMMER
+   ============================================================ */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+/* ============================================================
+   17. KETRI STRUCTURAL RULES (preserved)
+   ============================================================ */
 [data-has-hero] { padding-top: var(--app-header-h); }
 [data-hero-bleed] { margin-top: calc(var(--app-header-h) * -1); }
 :target { scroll-margin-top: var(--app-header-h); }
 
-/* KETRI required header inner height (do not change behavior) */
 .app-header-inner {
   height: var(--app-header-h);
   display: flex;
   align-items: center;
+}
+
+/* ============================================================
+   18. UTILITY CLASSES
+   ============================================================ */
+.mb-8 { margin-bottom: 2rem; }
+.font-bold { font-weight: 700; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+
+.counter-value {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--premium-indigo);
+  outline-offset: 2px;
 }
