@@ -115,15 +115,15 @@
   :root {
     --background: #09090b;
     --foreground: #fafafa;
-    --surface-primary: #09090b;
-    --surface-secondary: #18181b;
+    --surface-primary: #131316;
+    --surface-secondary: #1a1a1f;
     --surface-tertiary: #27272a;
-    --surface-elevated: rgba(24, 24, 27, 0.95);
-    --surface-glass: rgba(24, 24, 27, 0.6);
+    --surface-elevated: rgba(24, 24, 27, 0.97);
+    --surface-glass: rgba(24, 24, 27, 0.7);
     --surface-overlay: rgba(0, 0, 0, 0.6);
-    --border-subtle: rgba(255, 255, 255, 0.06);
-    --border-default: rgba(255, 255, 255, 0.1);
-    --border-strong: rgba(255, 255, 255, 0.15);
+    --border-subtle: rgba(255, 255, 255, 0.09);
+    --border-default: rgba(255, 255, 255, 0.14);
+    --border-strong: rgba(255, 255, 255, 0.2);
     --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.2);
     --shadow-glow-lg: 0 0 60px rgba(99, 102, 241, 0.25);
     --noise-opacity: 0.015;
@@ -278,10 +278,10 @@ button {
   top: -25%;
   left: -25%;
   background: 
-    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(79, 70, 229, 0.08), transparent),
-    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(124, 58, 237, 0.06), transparent),
-    radial-gradient(ellipse 70% 50% at 50% 80%, rgba(236, 72, 153, 0.05), transparent);
-  animation: aurora-shift 20s ease-in-out infinite alternate;
+    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(79, 70, 229, 0.04), transparent),
+    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(124, 58, 237, 0.03), transparent),
+    radial-gradient(ellipse 70% 50% at 50% 80%, rgba(236, 72, 153, 0.025), transparent);
+  animation: aurora-shift 30s ease-in-out infinite alternate;
   pointer-events: none;
   z-index: 0;
 }
@@ -314,10 +314,19 @@ button {
    8. PREMIUM GRADIENT TEXT UTILITIES
    ============================================================ */
 .gradient-text-primary {
-  background: linear-gradient(135deg, var(--premium-blue), var(--premium-indigo), var(--premium-purple));
+  background: linear-gradient(135deg, #60a5fa, #818cf8, #a78bfa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+@media (prefers-color-scheme: light) {
+  .gradient-text-primary {
+    background: linear-gradient(135deg, var(--premium-blue), var(--premium-indigo), var(--premium-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
 
 .gradient-text-warm {
@@ -406,7 +415,7 @@ button {
 }
 
 .card-premium:hover {
-  border-color: var(--border-default);
+  border-color: var(--border-strong);
   box-shadow: var(--shadow-xl), var(--shadow-glow);
   transform: translateY(-4px);
 }

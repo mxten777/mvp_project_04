@@ -111,7 +111,7 @@ export default function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="relative py-24 sm:py-32 aurora-bg bg-white dark:bg-zinc-950 overflow-hidden"
+      className="relative py-24 sm:py-32 aurora-bg bg-white dark:bg-[#0d0d12] overflow-hidden"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Header */}
@@ -125,7 +125,7 @@ export default function PortfolioSection() {
           <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
             <span className="gradient-text-primary">{t('portfolio.title')}</span>
           </h2>
-          <p className="font-ui text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="font-ui text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {t('portfolio.subtitle')}
           </p>
         </motion.div>
@@ -191,7 +191,7 @@ export default function PortfolioSection() {
                     <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-white mb-2 tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="font-ui text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
+                    <p className="font-ui text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4 line-clamp-2">
                       {item.description}
                     </p>
 

@@ -69,7 +69,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative py-24 sm:py-32 aurora-bg bg-white dark:bg-zinc-950 transition-colors duration-500"
+      className="relative py-24 sm:py-32 aurora-bg bg-white dark:bg-[#0d0d12] transition-colors duration-500"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Section Header */}
@@ -85,7 +85,7 @@ export default function ServicesSection() {
               {t('services.title')}
             </span>
           </h2>
-          <p className="font-ui text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="font-ui text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {t('services.subtitle')}
             <br className="hidden md:block" />
             <span className="font-semibold text-gray-900 dark:text-white">바이칼시스템즈</span>의 핵심 서비스를 만나보세요
@@ -130,7 +130,7 @@ export default function ServicesSection() {
                   <h3 className="font-heading text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
                     {service.name}
                   </h3>
-                  <p className="font-ui text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                  <p className="font-ui text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                     {service.description}
                   </p>
 
@@ -139,7 +139,7 @@ export default function ServicesSection() {
                     {service.features.map((feature, fi) => (
                       <div
                         key={fi}
-                        className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-300 transition-colors duration-300"
+                        className="flex items-center gap-2.5 text-sm text-gray-600 dark:text-gray-300 group-hover:text-gray-800 dark:group-hover:text-gray-100 transition-colors duration-300"
                       >
                         <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.gradient} flex-shrink-0`} />
                         <span>{feature}</span>
@@ -149,7 +149,7 @@ export default function ServicesSection() {
 
                   {/* Learn more link */}
                   <div className="mt-8 pt-6 border-t border-gray-100 dark:border-zinc-800">
-                    <button className="inline-flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
+                    <button className="inline-flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
                       자세히 보기
                       <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </button>

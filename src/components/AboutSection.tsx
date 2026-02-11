@@ -131,7 +131,7 @@ export default function AboutSection() {
           <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
             <span className="gradient-text-primary">{t('about.title')}</span>
           </h2>
-          <p className="font-ui text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="font-ui text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {t('about.subtitle')}
           </p>
         </motion.div>
@@ -151,11 +151,11 @@ export default function AboutSection() {
                 우리의 비전
               </h3>
               <div className="space-y-4">
-                <p className="font-ui text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="font-ui text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                   <span className="font-semibold text-gray-900 dark:text-white">(주) 바이칼시스템즈</span>는 AI와 RPA 기술을 활용하여
                   공공기관과 민간기업의 업무 효율성을 혁신하는 전문 기업입니다.
                 </p>
-                <p className="font-ui text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="font-ui text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                   공공데이터 API 활용부터 요양병원, 일반병원, 치매 어르신 복지정책 적용까지,
                   실질적인 <span className="font-semibold text-indigo-600 dark:text-indigo-400">사회적 가치</span>를 창출하는
                   바이브코딩 솔루션을 제공합니다.
@@ -188,7 +188,7 @@ export default function AboutSection() {
                     transition={{ delay: 0.4 + i * 0.1 }}
                   >
                     <div className={`flex-shrink-0 w-2 h-2 rounded-full bg-gradient-to-r ${item.color} group-hover:scale-150 transition-transform duration-300`} />
-                    <span className="font-ui text-sm sm:text-base text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
+                    <span className="font-ui text-sm sm:text-base text-gray-700 dark:text-gray-200 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
                       {item.text}
                     </span>
                   </motion.li>
@@ -214,7 +214,7 @@ export default function AboutSection() {
               className="card-premium p-6 sm:p-8 text-center group"
             >
               <div className="relative z-10">
-                <dt className="font-ui text-xs sm:text-sm text-gray-500 dark:text-gray-500 mb-2 tracking-wide">{stat.name}</dt>
+                <dt className="font-ui text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-2 tracking-wide">{stat.name}</dt>
                 <dd className="font-heading text-2xl sm:text-3xl font-bold gradient-text-primary">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </dd>
@@ -234,7 +234,7 @@ export default function AboutSection() {
             <h3 className="font-heading text-3xl sm:text-4xl font-bold tracking-tight mt-6">
               <span className="gradient-text-primary">우리의 가치</span>
             </h3>
-            <p className="font-ui text-base sm:text-lg text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
+            <p className="font-ui text-base sm:text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
               바이칼시스템즈가 추구하는 핵심 가치들입니다.
             </p>
           </div>
@@ -255,7 +255,7 @@ export default function AboutSection() {
                   <h4 className="font-heading text-lg font-bold text-gray-900 dark:text-white mb-3 tracking-tight">
                     {value.name}
                   </h4>
-                  <p className="font-ui text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  <p className="font-ui text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                     {value.description}
                   </p>
                 </div>

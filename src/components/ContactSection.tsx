@@ -134,7 +134,7 @@ export default function ContactSection() {
           <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
             <span className="gradient-text-primary">{t('contact.title')}</span>
           </h2>
-          <p className="font-ui text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="font-ui text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             전문 컨설턴트가 고객님의 요구사항에 맞는 <span className="font-semibold text-indigo-600 dark:text-indigo-400">최적의 솔루션</span>을 제안해드립니다.
           </p>
         </motion.div>
@@ -162,9 +162,9 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-gray-900 dark:text-white mb-0.5">{info.label}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{info.value}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">{info.value}</p>
                     {info.subValue && (
-                      <p className="text-sm text-gray-500 dark:text-gray-500">{info.subValue}</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{info.subValue}</p>
                     )}
                   </div>
                 </motion.div>
@@ -192,7 +192,7 @@ export default function ContactSection() {
                       </div>
                       <div>
                         <p className="text-sm font-semibold text-gray-900 dark:text-white">{item.title}</p>
-                        <p className="text-xs text-gray-500 dark:text-gray-500">{item.desc}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">{item.desc}</p>
                       </div>
                     </motion.div>
                   ))}

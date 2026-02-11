@@ -203,7 +203,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="text-base sm:text-lg md:text-xl text-slate-300/90 mb-12 max-w-2xl mx-auto leading-relaxed font-ui"
+          className="text-base sm:text-lg md:text-xl text-slate-200/90 mb-12 max-w-2xl mx-auto leading-relaxed font-ui"
         >
           {t('hero.description')}
         </motion.p>
@@ -265,7 +265,7 @@ export default function HeroSection() {
                   {count}
                   <span className="text-indigo-300">{stat.suffix}</span>
                 </div>
-                <div className="text-sm text-slate-400 font-ui">{stat.label}</div>
+                <div className="text-sm text-slate-300 font-ui">{stat.label}</div>
               </motion.div>
             );
           })}

@@ -39,7 +39,7 @@ export default function Footer() {
         <div className="marquee-container">
           <div className="marquee-content">
             {[...techStack, ...techStack].map((tech, i) => (
-              <span key={i} className="text-sm font-mono text-gray-600 flex items-center gap-3">
+              <span key={i} className="text-sm font-mono text-gray-500 flex items-center gap-3">
                 {tech}
                 <span className="w-1 h-1 rounded-full bg-gray-700" />
               </span>
@@ -61,10 +61,10 @@ export default function Footer() {
                 className="object-contain opacity-90"
               />
             </div>
-            <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
+            <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
               AI와 RPA 기술로 미래를 코딩하는 차세대 디지털 혁신 파트너
             </p>
-            <div className="space-y-2.5 text-sm text-gray-500">
+            <div className="space-y-2.5 text-sm text-gray-400">
               <p className="flex items-center gap-2">
                 <span className="text-gray-600">📞</span> 010-2380-4691
               </p>
@@ -85,7 +85,7 @@ export default function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-sm text-gray-500 hover:text-gray-300 transition-colors duration-200"
+                    className="text-sm text-gray-400 hover:text-gray-200 transition-colors duration-200"
                   >
                     {item.name}
                   </Link>
@@ -102,7 +102,7 @@ export default function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-sm text-gray-500 hover:text-gray-300 transition-colors duration-200"
+                    className="text-sm text-gray-400 hover:text-gray-200 transition-colors duration-200"
                   >
                     {item.name}
                   </Link>
@@ -114,7 +114,7 @@ export default function Footer() {
           {/* Newsletter / CTA */}
           <div>
             <h3 className="text-sm font-semibold text-white mb-5 tracking-wide uppercase">뉴스레터</h3>
-            <p className="text-sm text-gray-500 mb-4 leading-relaxed">
+            <p className="text-sm text-gray-400 mb-4 leading-relaxed">
               최신 기술 트렌드와 솔루션 소식을 받아보세요.
             </p>
             <div className="flex gap-2">
@@ -132,11 +132,11 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-gray-500">
             &copy; 2003-{new Date().getFullYear()} (주) 바이칼시스템즈. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <span className="text-xs text-gray-700">Powered by</span>
+            <span className="text-xs text-gray-500">Powered by</span>
             <span className="text-xs font-semibold gradient-text-primary">VIBE CODING</span>
           </div>
         </div>
