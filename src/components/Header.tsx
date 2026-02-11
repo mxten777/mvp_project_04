@@ -67,7 +67,7 @@ export default function Header() {
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
           scrolled
             ? 'glass-panel-strong shadow-lg'
-            : 'bg-transparent'
+            : 'bg-gray-950/60 backdrop-blur-md'
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
