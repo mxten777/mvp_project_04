@@ -171,7 +171,7 @@ export default function PortfolioSection() {
                   className="group card-premium flex flex-col"
                 >
                   {/* Card header with icon */}
-                  <div className="relative h-48 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-zinc-800 dark:to-zinc-900 flex items-center justify-center overflow-hidden">
+                  <div className="relative z-10 h-48 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-zinc-800 dark:to-zinc-900 flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0 opacity-30">
                       <div className={`absolute top-4 right-4 w-24 h-24 bg-gradient-to-br ${item.gradient} rounded-full blur-2xl opacity-50`} />
                       <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full blur-xl opacity-30" />
@@ -182,7 +182,7 @@ export default function PortfolioSection() {
                   </div>
 
                   {/* Card content */}
-                  <div className="flex flex-1 flex-col p-6 sm:p-8">
+                  <div className="relative z-10 flex flex-1 flex-col p-6 sm:p-8">
                     {/* Category badge */}
                     <span className="inline-flex self-start items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-900/50 mb-4">
                       {item.category}
