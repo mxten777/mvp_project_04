@@ -5,13 +5,9 @@ import AboutSection from '@/components/AboutSection';
 import PortfolioSection from '@/components/PortfolioSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
-import ChatBot from '@/components/ChatBot';
 import ThemeToggle from '@/components/ThemeToggle';
 import ScrollProgress from '@/components/ScrollProgress';
-import AdvancedSearch from '@/components/AdvancedSearch';
-import AnalyticsDashboard from '@/components/AnalyticsDashboard';
 import PWAInstallPrompt from '@/components/PWAInstallPrompt';
-import { PerformanceDashboard } from '@/lib/monitoring';
 
 function SectionDivider() {
   return (
@@ -21,7 +17,7 @@ function SectionDivider() {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-[#0b1120]">
       <ScrollProgress />
       <Header />
       <main>
@@ -49,11 +45,7 @@ export default function Home() {
 
       {/* Overlay UI */}
       <ThemeToggle />
-      <ChatBot />
-      <AdvancedSearch />
-      <AnalyticsDashboard />
       <PWAInstallPrompt />
-      <PerformanceDashboard />
     </div>
   );
 }

@@ -146,7 +146,7 @@ export default function ChatBot() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 100 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed bottom-6 right-6 z-50 w-96 h-[600px] bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-200/50 dark:border-zinc-700/50 flex flex-col overflow-hidden"
+            className="fixed bottom-6 right-6 z-50 w-96 h-[600px] bg-white/95 dark:bg-[#0f1729]/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-200/50 dark:border-[#253555]/50 flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 flex items-center justify-between">
@@ -210,7 +210,7 @@ export default function ChatBot() {
                     <div className={`px-4 py-3 rounded-2xl font-ui text-sm leading-relaxed ${
                       message.sender === 'user'
                         ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white'
-                        : 'bg-gray-100 dark:bg-zinc-800 text-gray-900 dark:text-white'
+                        : 'bg-gray-100 dark:bg-[#1a2540] text-gray-900 dark:text-white'
                     }`}>
                       {message.content}
                     </div>
@@ -229,7 +229,7 @@ export default function ChatBot() {
                     <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full flex items-center justify-center">
                       <Bot className="w-4 h-4 text-white" />
                     </div>
-                    <div className="bg-gray-100 dark:bg-zinc-800 px-4 py-3 rounded-2xl">
+                    <div className="bg-gray-100 dark:bg-[#1a2540] px-4 py-3 rounded-2xl">
                       <div className="flex space-x-1">
                         <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                         <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
@@ -251,7 +251,7 @@ export default function ChatBot() {
                     <motion.button
                       key={reply}
                       onClick={() => handleQuickReply(reply)}
-                      className="px-3 py-2 bg-gray-100 dark:bg-zinc-800 hover:bg-indigo-100 dark:hover:bg-indigo-900/30 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-full text-xs font-ui font-medium transition-colors duration-200"
+                      className="px-3 py-2 bg-gray-100 dark:bg-[#1a2540] hover:bg-indigo-100 dark:hover:bg-indigo-900/30 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-full text-xs font-ui font-medium transition-colors duration-200"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -263,7 +263,7 @@ export default function ChatBot() {
             )}
 
             {/* Input */}
-            <div className="p-4 border-t border-gray-200/50 dark:border-zinc-700/50">
+            <div className="p-4 border-t border-gray-200/50 dark:border-[#253555]/50">
               <div className="flex items-center space-x-3">
                 <input
                   type="text"
@@ -271,7 +271,7 @@ export default function ChatBot() {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="메시지를 입력하세요..."
-                  className="flex-1 px-4 py-3 bg-gray-100 dark:bg-zinc-800 border-0 rounded-2xl font-ui text-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500/50 focus:outline-none transition-all duration-200"
+                  className="flex-1 px-4 py-3 bg-gray-100 dark:bg-[#1a2540] border-0 rounded-2xl font-ui text-sm text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500/50 focus:outline-none transition-all duration-200"
                 />
                 <motion.button
                   onClick={() => sendMessage(inputValue)}

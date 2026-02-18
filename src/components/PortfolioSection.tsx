@@ -111,7 +111,7 @@ export default function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="relative py-24 sm:py-32 aurora-bg bg-white dark:bg-[#0d0d12] overflow-hidden"
+      className="relative py-24 sm:py-32 aurora-bg bg-white dark:bg-[#0e1526] overflow-hidden"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Header */}
@@ -119,13 +119,13 @@ export default function PortfolioSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <span className="section-label mb-6 inline-flex">PORTFOLIO</span>
-          <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
+          <span className="section-label mb-4 inline-flex">{t('portfolio.label')}</span>
+          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-5">
             <span className="gradient-text-primary">{t('portfolio.title')}</span>
           </h2>
-          <p className="font-ui text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="font-ui text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
             {t('portfolio.subtitle')}
           </p>
         </motion.div>
@@ -135,7 +135,7 @@ export default function PortfolioSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-16"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-16 max-w-3xl mx-auto"
         >
           {categories.map((category) => (
             <button
@@ -143,8 +143,8 @@ export default function PortfolioSection() {
               onClick={() => setSelectedCategory(category)}
               className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                 selectedCategory === category
-                  ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/25'
-                  : 'bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-zinc-700 border border-transparent hover:border-gray-300 dark:hover:border-zinc-600'
+                  ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/25 scale-105'
+                  : 'bg-gray-100/80 dark:bg-[#1a2540]/80 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-[#253555] border border-gray-200/60 dark:border-[#253555]/60 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400'
               }`}
             >
               {category}
@@ -157,7 +157,7 @@ export default function PortfolioSection() {
           {loading ? (
             <div className="col-span-full flex flex-col items-center py-20">
               <div className="w-10 h-10 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin" />
-              <p className="mt-4 text-gray-500 dark:text-gray-500 text-sm">프로젝트를 불러오는 중...</p>
+              <p className="mt-4 text-gray-500 dark:text-gray-500 text-sm">{t('portfolio.loading')}</p>
             </div>
           ) : (
             <AnimatePresence mode="wait">
@@ -170,15 +170,22 @@ export default function PortfolioSection() {
                   transition={{ duration: 0.4, delay: index * 0.08 }}
                   className="group card-premium flex flex-col"
                 >
-                  {/* Card header with icon */}
-                  <div className="relative z-10 h-48 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-zinc-800 dark:to-zinc-900 flex items-center justify-center overflow-hidden">
-                    <div className="absolute inset-0 opacity-30">
-                      <div className={`absolute top-4 right-4 w-24 h-24 bg-gradient-to-br ${item.gradient} rounded-full blur-2xl opacity-50`} />
-                      <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full blur-xl opacity-30" />
+                  {/* Card header with icon — enhanced gradient visual */}
+                  <div className="relative z-10 h-52 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-[#1a2540]/80 dark:to-[#0f1729] flex items-center justify-center overflow-hidden">
+                    {/* Decorative pattern */}
+                    <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(99,102,241,0.06)_1px,transparent_1px)] bg-[size:20px_20px]" />
+                    <div className="absolute inset-0 opacity-40">
+                      <div className={`absolute top-4 right-4 w-32 h-32 bg-gradient-to-br ${item.gradient} rounded-full blur-3xl opacity-40`} />
+                      <div className="absolute bottom-4 left-4 w-20 h-20 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full blur-2xl opacity-25" />
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-full blur-xl opacity-15" />
                     </div>
-                    <div className={`relative inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${item.gradient} shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                    <motion.div
+                      className={`relative inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${item.gradient} shadow-xl`}
+                      whileHover={{ scale: 1.12, rotate: 6 }}
+                      transition={{ type: 'spring', stiffness: 300 }}
+                    >
                       <item.icon className="w-10 h-10 text-white" />
-                    </div>
+                    </motion.div>
                   </div>
 
                   {/* Card content */}
@@ -200,7 +207,7 @@ export default function PortfolioSection() {
                       {item.technologies.slice(0, 4).map((tech) => (
                         <span
                           key={tech}
-                          className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-zinc-700"
+                          className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-gray-100 dark:bg-[#1a2540]/80 text-gray-600 dark:text-gray-400 border border-gray-200/70 dark:border-[#253555]/70"
                         >
                           {tech}
                         </span>
@@ -223,7 +230,7 @@ export default function PortfolioSection() {
                     </div>
 
                     {/* Action */}
-                    <div className="pt-4 border-t border-gray-100 dark:border-zinc-800">
+                    <div className="pt-4 border-t border-gray-100 dark:border-[#1e2d4a]">
                       {item.demoUrl ? (
                         <a
                           href={item.demoUrl}
@@ -254,10 +261,10 @@ export default function PortfolioSection() {
             <button
               onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
               disabled={currentPage === 1}
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-xl hover:bg-gray-50 dark:hover:bg-zinc-800 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 bg-white dark:bg-[#0f1729] border border-gray-200 dark:border-[#253555] rounded-xl hover:bg-gray-50 dark:hover:bg-[#1a2540] disabled:opacity-40 disabled:cursor-not-allowed transition-all"
             >
               <ChevronLeftIcon className="h-4 w-4 mr-1" />
-              이전
+              {t('common.prev')}
             </button>
 
             <div className="flex gap-1.5">
@@ -270,7 +277,7 @@ export default function PortfolioSection() {
                       className={`w-10 h-10 text-sm font-medium rounded-xl transition-all ${
                         currentPage === page
                           ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg'
-                          : 'text-gray-600 dark:text-gray-400 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 hover:bg-gray-50 dark:hover:bg-zinc-800'
+                          : 'text-gray-600 dark:text-gray-400 bg-white dark:bg-[#0f1729] border border-gray-200 dark:border-[#253555] hover:bg-gray-50 dark:hover:bg-[#1a2540]'
                       }`}
                     >
                       {page}
@@ -286,9 +293,9 @@ export default function PortfolioSection() {
             <button
               onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
               disabled={currentPage === totalPages}
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-700 rounded-xl hover:bg-gray-50 dark:hover:bg-zinc-800 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 bg-white dark:bg-[#0f1729] border border-gray-200 dark:border-[#253555] rounded-xl hover:bg-gray-50 dark:hover:bg-[#1a2540] disabled:opacity-40 disabled:cursor-not-allowed transition-all"
             >
-              다음
+              {t('common.next')}
               <ChevronRightIcon className="h-4 w-4 ml-1" />
             </button>
           </div>
@@ -296,7 +303,7 @@ export default function PortfolioSection() {
 
         {!loading && (
           <p className="mt-4 text-center text-xs text-gray-500 dark:text-gray-600">
-            전체 {filteredItems.length}개 프로젝트 중 {startIndex + 1}-{Math.min(startIndex + ITEMS_PER_PAGE, filteredItems.length)}개 표시
+            {t('portfolio.showing').replace('{{total}}', filteredItems.length.toString()).replace('{{start}}', (startIndex + 1).toString()).replace('{{end}}', Math.min(startIndex + ITEMS_PER_PAGE, filteredItems.length).toString())}
           </p>
         )}
 
@@ -305,21 +312,22 @@ export default function PortfolioSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-24"
+          className="mt-16"
         >
           <div className="relative overflow-hidden rounded-3xl">
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-3xl" />
-            <div className="relative m-[1px] bg-gray-950 rounded-[calc(1.5rem-1px)] p-10 sm:p-16 text-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-3xl animate-gradient-x" />
+            <div className="relative m-[1.5px] bg-[#0c1630] rounded-[calc(1.5rem-1.5px)] p-10 sm:p-16 text-center">
               <div className="absolute inset-0 overflow-hidden rounded-[inherit]">
-                <div className="absolute -top-20 -right-20 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl" />
-                <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-purple-500/10 rounded-full blur-3xl" />
+                <div className="absolute -top-20 -right-20 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl" />
+                <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-pink-500/5 rounded-full blur-3xl" />
               </div>
               <div className="relative">
-                <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4 tracking-tight">
-                  다음 성공 사례의 주인공이 되어보세요
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 tracking-tight">
+                  {t('portfolio.cta.title')}
                 </h3>
-                <p className="text-gray-400 max-w-xl mx-auto mb-10 text-lg">
-                  전문 컨설턴트와 함께 맞춤형 솔루션을 설계해보세요.
+                <p className="text-gray-400 max-w-xl mx-auto mb-8 text-base">
+                  {t('portfolio.cta.subtitle')}
                 </p>
                 <motion.a
                   href="#contact"
@@ -327,7 +335,7 @@ export default function PortfolioSection() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  프로젝트 상담 받기
+                  {t('portfolio.cta.button')}
                   <ArrowRightIcon className="ml-2 w-5 h-5" />
                 </motion.a>
               </div>

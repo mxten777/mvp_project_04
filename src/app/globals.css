@@ -77,7 +77,7 @@
   --duration-slower: 700ms;
   
   /* Layout */
-  --app-header-h: 72px;
+  --app-header-h: 64px;
   --section-gap: 120px;
   --container-max: 1280px;
   --content-max: 720px;
@@ -113,19 +113,19 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #09090b;
-    --foreground: #fafafa;
-    --surface-primary: #131316;
-    --surface-secondary: #1a1a1f;
-    --surface-tertiary: #27272a;
-    --surface-elevated: rgba(24, 24, 27, 0.97);
-    --surface-glass: rgba(24, 24, 27, 0.7);
-    --surface-overlay: rgba(0, 0, 0, 0.6);
-    --border-subtle: rgba(255, 255, 255, 0.09);
-    --border-default: rgba(255, 255, 255, 0.14);
-    --border-strong: rgba(255, 255, 255, 0.2);
-    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.2);
-    --shadow-glow-lg: 0 0 60px rgba(99, 102, 241, 0.25);
+    --background: #0b1120;
+    --foreground: #f1f5f9;
+    --surface-primary: #0f1729;
+    --surface-secondary: #141d30;
+    --surface-tertiary: #1a2540;
+    --surface-elevated: rgba(15, 23, 42, 0.97);
+    --surface-glass: rgba(15, 23, 42, 0.7);
+    --surface-overlay: rgba(5, 10, 20, 0.6);
+    --border-subtle: rgba(148, 163, 198, 0.08);
+    --border-default: rgba(148, 163, 198, 0.13);
+    --border-strong: rgba(148, 163, 198, 0.2);
+    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.25);
+    --shadow-glow-lg: 0 0 60px rgba(99, 102, 241, 0.3);
     --noise-opacity: 0.015;
   }
 }
@@ -246,7 +246,7 @@ button {
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, transparent, var(--premium-indigo), var(--premium-purple), var(--premium-pink), transparent);
-  opacity: 0.3;
+  opacity: 0.25;
 }
 
 .section-divider::after {
@@ -255,11 +255,11 @@ button {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background: linear-gradient(135deg, var(--premium-indigo), var(--premium-purple));
   border-radius: 50%;
-  box-shadow: 0 0 20px rgba(79, 70, 229, 0.5);
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
 }
 
 /* ============================================================
@@ -552,11 +552,11 @@ button {
    ============================================================ */
 .mesh-gradient {
   background: 
-    radial-gradient(at 20% 80%, rgba(79, 70, 229, 0.3) 0px, transparent 50%),
-    radial-gradient(at 80% 20%, rgba(124, 58, 237, 0.25) 0px, transparent 50%),
-    radial-gradient(at 40% 40%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
-    radial-gradient(at 90% 80%, rgba(236, 72, 153, 0.2) 0px, transparent 50%),
-    linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0c0a25 100%);
+    radial-gradient(at 20% 80%, rgba(79, 70, 229, 0.35) 0px, transparent 50%),
+    radial-gradient(at 80% 20%, rgba(124, 58, 237, 0.3) 0px, transparent 50%),
+    radial-gradient(at 40% 40%, rgba(6, 182, 212, 0.18) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, rgba(236, 72, 153, 0.22) 0px, transparent 50%),
+    linear-gradient(135deg, #0d1b2a 0%, #1b2a4a 35%, #1e1b4b 65%, #162040 100%);
 }
 
 /* ============================================================
@@ -594,7 +594,258 @@ button {
 }
 
 /* ============================================================
-   18. UTILITY CLASSES
+   18. STAGGER REVEAL ANIMATIONS
+   ============================================================ */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-scale {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33%      { transform: translateY(-6px) rotate(0.5deg); }
+  66%      { transform: translateY(3px) rotate(-0.5deg); }
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(79, 70, 229, 0.15); }
+  50%      { box-shadow: 0 0 40px rgba(79, 70, 229, 0.3), 0 0 80px rgba(124, 58, 237, 0.15); }
+}
+
+@keyframes border-rotate {
+  0%   { --border-angle: 0deg; }
+  100% { --border-angle: 360deg; }
+}
+
+@keyframes text-shine {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-slow { animation: float-slow 10s ease-in-out infinite; }
+.animate-gradient-x { animation: gradient-x 6s ease infinite; background-size: 200% 200%; }
+.animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+.animate-text-shine {
+  background-size: 200% auto;
+  animation: text-shine 4s linear infinite;
+}
+
+/* ============================================================
+   19. PREMIUM STAT CARD
+   ============================================================ */
+.stat-card {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  background: var(--surface-primary);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  transition: all var(--duration-slow) var(--ease-premium);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--premium-indigo), var(--premium-purple), var(--premium-pink));
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-premium);
+}
+
+.stat-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+/* ============================================================
+   20. PREMIUM TIMELINE
+   ============================================================ */
+.timeline-horizontal {
+  display: flex;
+  position: relative;
+}
+
+.timeline-horizontal::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--premium-indigo), var(--premium-purple), var(--premium-pink));
+  opacity: 0.3;
+  border-radius: 1px;
+}
+
+.timeline-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-step .step-dot {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--premium-indigo), var(--premium-purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 0 0 4px var(--surface-primary), 0 0 0 6px rgba(79, 70, 229, 0.2);
+  transition: all var(--duration-normal) var(--ease-premium);
+}
+
+.timeline-step:hover .step-dot {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px var(--surface-primary), 0 0 0 6px rgba(79, 70, 229, 0.3), 0 0 20px rgba(79, 70, 229, 0.2);
+}
+
+/* ============================================================
+   21. CARD FEATURED (larger hero card)
+   ============================================================ */
+.card-featured {
+  position: relative;
+  background: var(--surface-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  transition: all var(--duration-slow) var(--ease-premium);
+}
+
+.card-featured:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-2xl), var(--shadow-glow-lg);
+  transform: translateY(-6px);
+}
+
+.card-featured::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.04), rgba(124, 58, 237, 0.03), transparent);
+  opacity: 0;
+  transition: opacity var(--duration-slow) var(--ease-premium);
+  pointer-events: none;
+}
+
+.card-featured:hover::after {
+  opacity: 1;
+}
+
+/* ============================================================
+   22. ANIMATED GRADIENT BORDER (conic)
+   ============================================================ */
+.conic-border {
+  position: relative;
+  border-radius: var(--radius-xl);
+  padding: 1.5px;
+  background: conic-gradient(from var(--border-angle, 0deg), var(--premium-indigo), var(--premium-purple), var(--premium-pink), var(--premium-cyan), var(--premium-indigo));
+  animation: border-rotate 4s linear infinite;
+}
+
+.conic-border > * {
+  border-radius: calc(var(--radius-xl) - 1.5px);
+  background: var(--surface-primary);
+}
+
+/* ============================================================
+   23. PREMIUM BADGE VARIANTS
+   ============================================================ */
+.badge-glow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(79, 70, 229, 0.08);
+  border: 1px solid rgba(79, 70, 229, 0.18);
+  color: var(--premium-indigo);
+  backdrop-filter: blur(8px);
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.dark .badge-glow {
+  background: rgba(129, 140, 248, 0.1);
+  border-color: rgba(129, 140, 248, 0.25);
+  color: #818cf8;
+}
+
+/* ============================================================
+   24. DOT GRID PATTERN
+   ============================================================ */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(79, 70, 229, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .dot-grid {
+  background-image: radial-gradient(circle, rgba(129, 140, 248, 0.08) 1px, transparent 1px);
+}
+
+/* ============================================================
+   25. PILL TAG STYLES
+   ============================================================ */
+.pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-subtle);
+  color: var(--neutral-600);
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.dark .pill-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--neutral-400);
+}
+
+.pill-tag:hover {
+  border-color: var(--premium-indigo);
+  color: var(--premium-indigo);
+  background: rgba(79, 70, 229, 0.06);
+}
+
+/* ============================================================
+   26. UTILITY CLASSES
    ============================================================ */
 .mb-8 { margin-bottom: 2rem; }
 .font-bold { font-weight: 700; }
@@ -609,4 +860,37 @@ button {
 .focus-ring:focus-visible {
   outline: 2px solid var(--premium-indigo);
   outline-offset: 2px;
+}
+
+/* Premium text gradient with animated shine */
+.gradient-text-shine {
+  background: linear-gradient(
+    90deg,
+    #60a5fa 0%,
+    #818cf8 25%,
+    #c084fc 50%,
+    #818cf8 75%,
+    #60a5fa 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: text-shine 6s linear infinite;
+}
+
+/* Responsive container with premium max-width */
+.container-premium {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-premium { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+@media (min-width: 1024px) {
+  .container-premium { padding-left: 2rem; padding-right: 2rem; }
 }

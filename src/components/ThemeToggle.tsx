@@ -44,7 +44,7 @@ export default function ThemeToggle() {
   return (
     <motion.button
       onClick={toggleTheme}
-      className="fixed top-6 right-20 z-40 w-12 h-12 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-xl border border-gray-200/50 dark:border-zinc-700/50 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-300"
+      className="fixed top-6 right-20 z-40 w-12 h-12 bg-white/90 dark:bg-[#0f1729]/90 backdrop-blur-xl border border-gray-200/50 dark:border-[#253555]/50 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-300"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       initial={{ opacity: 0, y: -20 }}
